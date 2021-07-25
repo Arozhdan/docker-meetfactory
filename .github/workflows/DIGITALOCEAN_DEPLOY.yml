@@ -12,6 +12,7 @@ jobs:
       - uses: actions/checkout@master
       - name: Create .env
         run: |
+          ls
           echo "STRAPI_PORT=$(cat ./.github/ports.json | json STRAPI_PORT)" > .env
           echo "POSTGRESS_PORT=$(cat ./.github/ports.json | json POSTGRESS_PORT)" > .env
           echo "FRONTEND_PORT=$(cat ./.github/ports.json | json FRONTEND_PORT)" > .env
