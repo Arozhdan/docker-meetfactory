@@ -1,0 +1,29 @@
+.event-card-secondary{
+  min-width: 340px;
+}
+.event-card-secondary__body{
+  margin-top: 16px;
+  display: flex;
+  column-gap: 16px;
+  >div{
+    flex-grow: 1;
+    max-width: 50%;
+  }
+}
+.event-card-secondary__img-wrapper{
+  position: relative;
+}
+.event-card-secondary__img-wrapper-overlay{
+  transition: var(--transition);
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(26, 26, 26, 0.6) 0%, rgba(26, 26, 26, 0) 100%);
+}
+.event-card-secondary:hover .event-card-secondary__img-wrapper-overlay{
+  opacity: 1;
+}

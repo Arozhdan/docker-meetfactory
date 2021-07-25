@@ -1,0 +1,101 @@
+@import "assets/css/pages/event-page.pcss";
+@import "assets/css/pages/gallery.pcss";
+
+*:focus {
+ outline: 1px solid #767676 !important;
+  border-radius: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-neue);
+  font-size: clamp(16px, 1vw, 24px);
+  color: var(--black);
+}
+
+h1, .h1 {
+  font-size: clamp(38px, 2vw, 46px);
+  line-height: 1.05;
+}
+
+h2, .h2 {
+  font-size: clamp(25px, 1.3vw, 38px);
+  line-height: 1.28;
+}
+
+h3, .h3 {
+  font-size: clamp(20px, 1.1vw, 28px);
+  line-height: 1.2;
+}
+
+h4, .h4 {
+  font-size: 16px;
+  line-height: 16px;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+  font-family: var(--font-neue-title);
+  font-style: normal;
+  font-weight: normal;
+}
+
+.small {
+  font-size: 10px;
+  line-height: 16px;
+  color: var(--black60);
+}
+
+.font-neue-disp {
+  font-family: var(--font-neue-title);
+}
+
+.font-meet {
+  font-family: var(--font-meet);
+}
+
+.view-mobile {
+  display: none;
+}
+
+.view-tablet {
+  display: none;
+}
+
+.max-w-33 {
+  max-width: 33%;
+}
+
+
+
+@media (max-width: 768px) {
+  .view-tablet {
+    display: block;
+  }
+
+  .overflow-mob-scroll {
+    overflow-x: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    > div {
+      transform: translateX(20px);
+    }
+  }
+}
+
+
+.agile--ssr .agile__slides > * {
+  overflow: hidden;
+  width: 0
+}
+
+.agile--ssr .agile__slides > *:first-child {
+  width: 100%
+}

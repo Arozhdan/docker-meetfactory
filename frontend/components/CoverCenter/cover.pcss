@@ -1,0 +1,55 @@
+.cover--center{
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 200px;
+  &__inner{
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+    width: calc(100% - 48px);
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__title{
+    position: absolute;
+    left: 5%;
+    width: 90%;
+    text-align: center;
+    top: 50%;
+    transform: translate(0,-50%);
+    color: white;
+    font-size: 5vw;
+    line-height: 1;
+    font-family: var(--font-neue-title);
+  }
+  &__info{
+    margin-bottom: 16px;
+  }
+  &__info>div{
+    display: flex;
+  }
+  &__info>div + div{
+    margin-top: 8px;
+  }
+  &__info img{
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin-right: 8px;
+  }
+  &__info span{
+    display: block;
+    font-family: var(--font-neue);
+    font-weight: bold;
+    color: var(--white);
+  }
+  &__tags{
+    display: flex;
+    .tag{
+      margin-right: 16px;
+    }
+  }
+}

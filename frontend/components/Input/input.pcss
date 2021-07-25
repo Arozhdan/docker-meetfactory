@@ -1,0 +1,49 @@
+.input{
+  display: inline-block;
+  position: relative;
+  input{
+    width: 100%;
+    padding: 12px 40px 12px 16px;
+    @apply border-black text-black;
+    border: 1px solid ;
+    min-width: 290px;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: var(--font-neue);
+  }
+  input:focus{
+    outline: none;
+  }
+  span{
+    font-family: var(--font-neue);
+    position: absolute;
+    color: var(--black60);
+    top: 6px;
+    left: 16px;
+    font-size: 8px;
+    line-height: 8px;
+    @apply transition-all duration-100;
+  }
+  img{
+    position: absolute;
+    top: 12px;
+    right: 16px;
+  }
+}
+.input--empty{
+  span{
+    top: 13px;
+    left: 18px;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--black60);
+  }
+}
+.input--error{
+  input{
+    @apply border-red text-red;
+  }
+  span{
+    color: var(--red);
+  }
+}

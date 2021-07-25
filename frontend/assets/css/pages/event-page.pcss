@@ -1,0 +1,37 @@
+.event-page{
+  &__inner__top{
+    display: flex;
+    column-gap: 40px;
+    padding-top: 36px;
+  }
+  &__inner__top > div{
+    max-width: calc(50% - 20px);
+    flex-grow: 1;
+  }
+  &__inner__top > div > img{
+    width: 100%;
+  }
+  &__info-item{
+    display: flex;
+    align-items: center;
+    font-style: normal;
+    font-weight: bold;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+  }
+  &__info-item img{
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin-right: 8px;
+    filter: brightness(0);
+  }
+  &__info-item + &__info-item{
+    margin-top: 8px;
+  }
+  .embed{
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}

@@ -1,0 +1,126 @@
+
+.gallery-page{
+  .overlay-image .h2{
+    display: none;
+  }
+  @media (max-width: 768px) {
+    .overlay-image{
+      margin-bottom: 0;
+      .h1{
+        display: none;
+      }
+      .h2{
+        display: block;
+      }
+    }
+    .overlay-image__ratio{
+      padding-bottom: 66.67%;
+    }
+  }
+}
+.gallery-page__settings{
+  display: flex;
+  column-gap: 16px;
+  margin-bottom: 24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+@media (max-width: 1135px) {
+  .gallery-page__settings{
+    flex-wrap: wrap;
+    row-gap: 16px;
+  }
+  .gallery-page .spacer{
+    display: none;
+  }
+  .gallery-page__settings > *{
+  }
+}
+@media (max-width: 768px) {
+  .gallery-page__settings{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .select__wrapper{
+    grid-row: 2/3;
+    grid-column: span 3;
+    width: 100% !important;
+    min-width: 100px !important;
+  }
+  .search-box{
+    grid-row: 3/4;
+    grid-column: span 6;
+  }
+  .button{
+    grid-column: span 2;
+    width: 100% !important;
+    min-width: 80px !important;
+  }
+}
+
+.gallery-overview{
+  margin-top: 45px;
+  margin-bottom: 45px;
+  padding-left: 20px;
+  padding-right: 20px;
+  &__inner{
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    column-gap: 40px;
+  }
+  &__image{
+    width: 100%;
+    padding-bottom: 67.8%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &__slider{
+    width: 100%;
+  }
+  &__right{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  &__slider-nav{
+    width: 32px;
+    height: 32px;
+    opacity: 0;
+    transition: var(--transition-longer);
+  }
+  &__slider-nav::after{
+    display: block;
+    content: '' !important;
+    width: 32px;
+    height: 32px;
+    background-image: url('~/assets/icons/Arrow_right.svg');
+    filter: brightness(100);
+  }
+  &__slider:hover{
+    .gallery-overview__slider-nav{
+      opacity: 1;
+    }
+  }
+}
+.swiper-button-prev.gallery-overview__slider-nav::after{
+  background-image: url('~/assets/icons/Arrow_left.svg');
+}
+@media (max-width: 768px) {
+  .gallery-overview{
+    padding: 0;
+    &__inner{
+      grid-template-columns: 1fr;
+    }
+    &__slider{
+      margin-bottom: 48px;
+    }
+    &__right{
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  .gallery-page__settings{
+    column-gap: 8px;
+  }
+}

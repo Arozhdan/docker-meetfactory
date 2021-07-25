@@ -1,0 +1,55 @@
+.theater-page:not(.theater-page--actors){
+  .full-calendar{
+    display: none;
+  }
+}
+.theater-page__settings{
+  display: flex;
+  column-gap: 16px;
+  margin-bottom: 24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+@media (max-width: 1135px) {
+  .theater-page__settings{
+    flex-wrap: wrap;
+    row-gap: 16px;
+  }
+  .theater-page .spacer{
+    display: none;
+  }
+  .theater-page__settings > *{
+  }
+}
+@media (max-width: 768px) {
+  .theater-page{
+    .big-link{
+      display: none;
+    }
+    .full-calendar{
+      display: block;
+    }
+    .date-wrapper{
+      display: none;
+    }
+  }
+  .theater-page__settings{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, max-content);
+  }
+  .full-calendar{
+    grid-column: span 6;
+    width: 100% !important;
+    min-width: 100px !important;
+  }
+  .search-box{
+    grid-row: 3/4;
+    grid-column: span 6;
+  }
+  .button{
+    grid-column: span 2;
+    width: 100% !important;
+    min-width: 80px !important;
+  }
+}

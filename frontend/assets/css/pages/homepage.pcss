@@ -1,0 +1,22 @@
+.homepage{
+  &__top{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 28.125% 40% minmax(306px,23.9%);
+    justify-content: space-between;
+  }
+}
+.homepage__calendar--mobile{
+  display: none;
+}
+@media (max-width: 768px){
+  .homepage__top{
+    display: none;
+  }
+  .homepage__calendar{
+    display: none;
+  }
+  .homepage__calendar--mobile{
+    display: block;
+  }
+}

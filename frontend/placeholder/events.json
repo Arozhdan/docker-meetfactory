@@ -1,0 +1,620 @@
+[
+  {
+    "id": "60a3ccafc0a1cbb795999fba",
+    "title": "Alexis PHUEL",
+    "picture": "https://images.unsplash.com/photo-1626180990698-2d38cba3fe9d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=640&q=80",
+    "dates": [
+      {
+        "index": 0,
+        "date": "2013-12-31T12:00:00-01:00",
+        "time": "8:17"
+      },
+      {
+        "index": 1,
+        "date": "2014-01-01T12:00:00-01:00",
+        "time": "14:39"
+      },
+      {
+        "index": 2,
+        "date": "2014-01-02T12:00:00-01:00",
+        "time": "3:48"
+      },
+      {
+        "index": 3,
+        "date": "2014-01-03T12:00:00-01:00",
+        "time": "3:19"
+      },
+      {
+        "index": 4,
+        "date": "2014-01-04T12:00:00-01:00",
+        "time": "18:59"
+      },
+      {
+        "index": 5,
+        "date": "2014-01-05T12:00:00-01:00",
+        "time": "18:33"
+      },
+      {
+        "index": 6,
+        "date": "2014-01-06T12:00:00-01:00",
+        "time": "14:28"
+      },
+      {
+        "index": 7,
+        "date": "2014-01-07T12:00:00-01:00",
+        "time": "3:12"
+      },
+      {
+        "index": 8,
+        "date": "2014-01-08T12:00:00-01:00",
+        "time": "16:46"
+      },
+      {
+        "index": 9,
+        "date": "2014-01-09T12:00:00-01:00",
+        "time": "7:45"
+      }
+    ],
+    "category": "Galerie MeetFactory",
+    "tags": [
+      {
+        "title": "Vyprodáno",
+        "type": "white"
+      },
+      {
+        "title": "Koncert na dvorku",
+        "type": "black"
+      }
+    ],
+    "type": ""
+  },
+  {
+    "id": "60a3ccaf3db9876e34340c9d",
+    "title": "Selma MAXEMIA",
+    "picture": "https://images.unsplash.com/photo-1626222695132-90ee80c74b16?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=564&q=80",
+    "dates": [
+      {
+        "index": 1,
+        "date": "2014-01-01T12:00:00-01:00",
+        "time": "23:53"
+      },
+      {
+        "index": 3,
+        "date": "2014-01-03T12:00:00-01:00",
+        "time": "17:31"
+      },
+      {
+        "index": 4,
+        "date": "2014-01-04T12:00:00-01:00",
+        "time": "23:42"
+      },
+      {
+        "index": 5,
+        "date": "2014-01-05T12:00:00-01:00",
+        "time": "14:41"
+      },
+      {
+        "index": 6,
+        "date": "2014-01-06T12:00:00-01:00",
+        "time": "19:40"
+      },
+      {
+        "index": 7,
+        "date": "2014-01-07T12:00:00-01:00",
+        "time": "22:16"
+      },
+      {
+        "index": 8,
+        "date": "2014-01-08T12:00:00-01:00",
+        "time": "10:54"
+      },
+      {
+        "index": 9,
+        "date": "2014-01-09T12:00:00-01:00",
+        "time": "1:14"
+      }
+    ],
+    "category": "Divadlo",
+    "tags": [
+      {
+        "title": "Předprodej",
+        "type": "red"
+      },
+      {
+        "title": "zdarma",
+        "type": "red"
+      }
+    ],
+    "type": ""
+  },
+  {
+    "id": "60a3ccafea23bd93b5ef558a",
+    "title": "Manning ESCENTA",
+    "picture": "https://images.unsplash.com/photo-1626121889794-c20aaa6fc4ab?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=635&q=80",
+    "dates": [
+      {
+        "index": 4,
+        "date": "2014-01-04T12:00:00-01:00",
+        "time": "5:19"
+      },
+      {
+        "index": 5,
+        "date": "2014-01-05T12:00:00-01:00",
+        "time": "4:0"
+      },
+      {
+        "index": 6,
+        "date": "2014-01-06T12:00:00-01:00",
+        "time": "15:32"
+      },
+      {
+        "index": 7,
+        "date": "2014-01-07T12:00:00-01:00",
+        "time": "1:25"
+      },
+      {
+        "index": 8,
+        "date": "2014-01-08T12:00:00-01:00",
+        "time": "10:22"
+      },
+      {
+        "index": 9,
+        "date": "2014-01-09T12:00:00-01:00",
+        "time": "15:17"
+      }
+    ],
+    "category": "Podcast",
+    "tags": [
+      {
+        "title": "Vyprodáno",
+        "type": "red"
+      },
+      {
+        "title": "Předprodej",
+        "type": "white"
+      }
+    ],
+    "type": ""
+  },
+  {
+    "id": "60a3ccaf2368745c50590be7",
+    "title": "Lavonne FILODYNE",
+    "picture": "https://images.unsplash.com/photo-1625691782557-f879e60c1105?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=654&q=80",
+    "dates": [
+      {
+        "index": 1,
+        "date": "2014-01-01T12:00:00-01:00",
+        "time": "2:30"
+      },
+      {
+        "index": 4,
+        "date": "2014-01-04T12:00:00-01:00",
+        "time": "17:43"
+      },
+      {
+        "index": 5,
+        "date": "2014-01-05T12:00:00-01:00",
+        "time": "21:52"
+      },
+      {
+        "index": 6,
+        "date": "2014-01-06T12:00:00-01:00",
+        "time": "4:21"
+      },
+      {
+        "index": 7,
+        "date": "2014-01-07T12:00:00-01:00",
+        "time": "11:54"
+      },
+      {
+        "index": 8,
+        "date": "2014-01-08T12:00:00-01:00",
+        "time": "16:55"
+      },
+      {
+        "index": 9,
+        "date": "2014-01-09T12:00:00-01:00",
+        "time": "18:6"
+      }
+    ],
+    "category": "Podcast",
+    "tags": [
+      {
+        "title": "Koncert na dvorku",
+        "type": "white"
+      },
+      {
+        "title": "zdarma",
+        "type": "red"
+      }
+    ],
+    "type": "crossed"
+  },
+  {
+    "id": "60a3ccaf473c89e76a096986",
+    "title": "Wynn PROVIDCO",
+    "picture": "https://images.unsplash.com/photo-1626371134003-aa7e0d18999c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+    "dates": [
+      {
+        "index": 1,
+        "date": "2014-01-01T12:00:00-01:00",
+        "time": "6:38"
+      },
+      {
+        "index": 2,
+        "date": "2014-01-02T12:00:00-01:00",
+        "time": "0:29"
+      },
+      {
+        "index": 3,
+        "date": "2014-01-03T12:00:00-01:00",
+        "time": "1:18"
+      }
+    ],
+    "category": "Galerie MeetFactory",
+    "tags": [
+      {
+        "title": "Koncert na dvorku",
+        "type": "white"
+      }
+    ],
+    "type": ""
+  },
+  {
+    "id": "60a3ccaf1fb3ac5cf392e9f5",
+    "title": "Cain DIGIPRINT",
+    "picture": "https://images.unsplash.com/photo-1626370235811-9e20320478a4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+    "dates": [
+      {
+        "index": 0,
+        "date": "2013-12-31T12:00:00-01:00",
+        "time": "22:49"
+      },
+      {
+        "index": 1,
+        "date": "2014-01-01T12:00:00-01:00",
+        "time": "19:0"
+      },
+      {
+        "index": 2,
+        "date": "2014-01-02T12:00:00-01:00",
+        "time": "12:0"
+      },
+      {
+        "index": 3,
+        "date": "2014-01-03T12:00:00-01:00",
+        "time": "13:23"
+      },
+      {
+        "index": 4,
+        "date": "2014-01-04T12:00:00-01:00",
+        "time": "14:14"
+      },
+      {
+        "index": 5,
+        "date": "2014-01-05T12:00:00-01:00",
+        "time": "15:29"
+      },
+      {
+        "index": 6,
+        "date": "2014-01-06T12:00:00-01:00",
+        "time": "19:8"
+      },
+      {
+        "index": 7,
+        "date": "2014-01-07T12:00:00-01:00",
+        "time": "23:55"
+      },
+      {
+        "index": 8,
+        "date": "2014-01-08T12:00:00-01:00",
+        "time": "17:59"
+      },
+      {
+        "index": 9,
+        "date": "2014-01-09T12:00:00-01:00",
+        "time": "1:1"
+      }
+    ],
+    "category": "Hudba",
+    "tags": [
+      {
+        "title": "nová epizoda",
+        "type": "red"
+      },
+      {
+        "title": "Koncert na dvorku",
+        "type": "red"
+      },
+      {
+        "title": "zdarma",
+        "type": "black"
+      },
+      {
+        "title": "nová epizoda",
+        "type": "black"
+      }
+    ],
+    "type": ""
+  },
+  {
+    "id": "60a3ccaf48d666e3d72ee359",
+    "title": "Dale XIXAN",
+    "picture": "https://images.unsplash.com/photo-1626080308347-a806a7c0570b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+    "dates": [
+      {
+        "index": 1,
+        "date": "2014-01-01T12:00:00-01:00",
+        "time": "4:39"
+      },
+      {
+        "index": 2,
+        "date": "2014-01-02T12:00:00-01:00",
+        "time": "4:40"
+      },
+      {
+        "index": 3,
+        "date": "2014-01-03T12:00:00-01:00",
+        "time": "6:24"
+      },
+      {
+        "index": 4,
+        "date": "2014-01-04T12:00:00-01:00",
+        "time": "18:46"
+      },
+      {
+        "index": 5,
+        "date": "2014-01-05T12:00:00-01:00",
+        "time": "2:51"
+      },
+      {
+        "index": 6,
+        "date": "2014-01-06T12:00:00-01:00",
+        "time": "19:21"
+      },
+      {
+        "index": 7,
+        "date": "2014-01-07T12:00:00-01:00",
+        "time": "16:20"
+      },
+      {
+        "index": 8,
+        "date": "2014-01-08T12:00:00-01:00",
+        "time": "6:14"
+      },
+      {
+        "index": 9,
+        "date": "2014-01-09T12:00:00-01:00",
+        "time": "23:35"
+      }
+    ],
+    "category": "Podcast",
+    "tags": [
+      {
+        "title": "Vyprodáno",
+        "type": "black"
+      },
+      {
+        "title": "Předprodej",
+        "type": "white"
+      },
+      {
+        "title": "Vyprodáno",
+        "type": "white"
+      }
+    ],
+    "type": "crossed"
+  },
+  {
+    "id": "60a3ccafbe0624d816d62f8f",
+    "title": "Eaton EXTREMO",
+    "picture": "https://images.unsplash.com/photo-1626222724613-0d0ade2b753b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=564&q=80",
+    "dates": [
+      {
+        "index": 3,
+        "date": "2014-01-03T12:00:00-01:00",
+        "time": "0:28"
+      },
+      {
+        "index": 4,
+        "date": "2014-01-04T12:00:00-01:00",
+        "time": "15:37"
+      },
+      {
+        "index": 5,
+        "date": "2014-01-05T12:00:00-01:00",
+        "time": "2:15"
+      },
+      {
+        "index": 6,
+        "date": "2014-01-06T12:00:00-01:00",
+        "time": "10:49"
+      },
+      {
+        "index": 7,
+        "date": "2014-01-07T12:00:00-01:00",
+        "time": "2:2"
+      },
+      {
+        "index": 8,
+        "date": "2014-01-08T12:00:00-01:00",
+        "time": "6:17"
+      },
+      {
+        "index": 9,
+        "date": "2014-01-09T12:00:00-01:00",
+        "time": "9:35"
+      }
+    ],
+    "category": "Galerie MeetFactory",
+    "tags": [
+      {
+        "title": "Koncert na dvorku",
+        "type": "white"
+      },
+      {
+        "title": "nová epizoda",
+        "type": "red"
+      },
+      {
+        "title": "nová epizoda",
+        "type": "red"
+      },
+      {
+        "title": "nová epizoda",
+        "type": "red"
+      },
+      {
+        "title": "Koncert na dvorku",
+        "type": "red"
+      }
+    ],
+    "type": ""
+  },
+  {
+    "id": "60a3ccafafd6a16ed6a0fb42",
+    "title": "Hopkins MANTRO",
+    "picture": "https://images.unsplash.com/photo-1626222724617-82a3ca23d5b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+    "dates": [
+
+      {
+        "index": 1,
+        "date": "2014-01-01T12:00:00-01:00",
+        "time": "14:14"
+      },
+      {
+        "index": 2,
+        "date": "2014-01-02T12:00:00-01:00",
+        "time": "16:31"
+      },
+      {
+        "index": 3,
+        "date": "2014-01-03T12:00:00-01:00",
+        "time": "20:14"
+      },
+      {
+        "index": 4,
+        "date": "2014-01-04T12:00:00-01:00",
+        "time": "17:5"
+      },
+      {
+        "index": 5,
+        "date": "2014-01-05T12:00:00-01:00",
+        "time": "5:4"
+      },
+      {
+        "index": 6,
+        "date": "2014-01-06T12:00:00-01:00",
+        "time": "6:11"
+      },
+      {
+        "index": 7,
+        "date": "2014-01-07T12:00:00-01:00",
+        "time": "4:20"
+      },
+      {
+        "index": 8,
+        "date": "2014-01-08T12:00:00-01:00",
+        "time": "23:9"
+      },
+      {
+        "index": 9,
+        "date": "2014-01-09T12:00:00-01:00",
+        "time": "11:52"
+      }
+    ],
+    "category": "Galerie MeetFactory",
+    "tags": [
+      {
+        "title": "nová epizoda",
+        "type": "red"
+      },
+      {
+        "title": "Koncert na dvorku",
+        "type": "black"
+      },
+      {
+        "title": "zdarma",
+        "type": "red"
+      },
+      {
+        "title": "nová epizoda",
+        "type": "white"
+      }
+    ],
+    "type": ""
+  },
+  {
+    "id": "60a3ccaffbdad5f8e99eb12d",
+    "title": "Stanley RAMJOB",
+    "picture": "https://images.unsplash.com/photo-1626222724602-ef3c081531f9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=564&q=80",
+    "dates": [
+      {
+        "index": 0,
+        "date": "2013-12-31T12:00:00-01:00",
+        "time": "23:39"
+      },
+      {
+        "index": 1,
+        "date": "2014-01-01T12:00:00-01:00",
+        "time": "6:21"
+      },
+      {
+        "index": 2,
+        "date": "2014-01-02T12:00:00-01:00",
+        "time": "14:40"
+      },
+      {
+        "index": 3,
+        "date": "2014-01-03T12:00:00-01:00",
+        "time": "14:4"
+      },
+      {
+        "index": 4,
+        "date": "2014-01-04T12:00:00-01:00",
+        "time": "16:47"
+      },
+      {
+        "index": 5,
+        "date": "2014-01-05T12:00:00-01:00",
+        "time": "16:2"
+      },
+      {
+        "index": 6,
+        "date": "2014-01-06T12:00:00-01:00",
+        "time": "4:47"
+      },
+      {
+        "index": 7,
+        "date": "2014-01-07T12:00:00-01:00",
+        "time": "6:28"
+      },
+      {
+        "index": 8,
+        "date": "2014-01-08T12:00:00-01:00",
+        "time": "5:23"
+      },
+      {
+        "index": 9,
+        "date": "2014-01-09T12:00:00-01:00",
+        "time": "3:46"
+      }
+    ],
+    "category": "Podcast",
+    "tags": [
+      {
+        "title": "Předprodej",
+        "type": "white"
+      },
+      {
+        "title": "Vyprodáno",
+        "type": "black"
+      },
+      {
+        "title": "Předprodej",
+        "type": "red"
+      }
+    ],
+    "type": ""
+  }
+]

@@ -1,0 +1,36 @@
+.mobile-menu{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 11;
+  background-color: var(--black);
+  &__search{
+    height: 56px;
+    padding: 12px;
+    border-top: 1px solid var(--white);
+    border-bottom: 1px solid var(--white);
+    margin-bottom: 24px;
+  }
+  &__link{
+    display: block;
+    margin: 0 auto;
+    font-family: var(--font-meet);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 32px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+
+  &__link+&__link{
+      margin-top: 24px;
+  }
+  &__close{
+    position: absolute;
+    right: 16px;
+    top: 16px;
+  }
+}

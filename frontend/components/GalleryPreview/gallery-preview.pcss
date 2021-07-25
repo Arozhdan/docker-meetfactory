@@ -1,0 +1,19 @@
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  &__image{
+    padding-bottom: 66.67%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  &__image:nth-child(5n){
+    grid-column: 1/5;
+    padding-bottom: 30%;
+  }
+  &__image:hover{
+    opacity: 0.9;
+  }
+}

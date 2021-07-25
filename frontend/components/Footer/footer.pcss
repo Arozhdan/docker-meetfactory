@@ -1,0 +1,148 @@
+.footer {
+  padding: 0 20px 8px;
+  background-color: var(--black);
+
+  &__nav {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    border-bottom: 1px solid var(--white15);
+  }
+
+  &__nav__meet {
+    font-family: var(--font-meet);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: -0.04em;
+    color: var(--white);
+    transition: var(--transition);
+  }
+
+  &__nav__meet:hover {
+    opacity: 0.6;
+  }
+
+  &__nav__social {
+    display: flex;
+  }
+
+  &__nav__social img {
+    width: 48px;
+    height: 48px;
+    filter: brightness(100);
+    margin-left: 22px;
+  }
+
+  &__nav__social a {
+    transition: var(--transition);
+  }
+
+  &__nav__social a:hover {
+    opacity: 0.6;
+  }
+
+  &__nav__logo {
+    position: absolute;
+    width: 62px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__nav__logo a {
+    transition: var(--transition);
+  }
+  &__nav__logo a:hover {
+    opacity: 0.6;
+  }
+
+  &__nav__logo:hover {
+    opacity: 0.6;
+  }
+
+  &__body {
+    padding-top: 32px;
+    padding-bottom: 48px;
+    display: grid;
+    grid-template-columns: 35% 35%;
+    justify-content: space-between;
+  }
+
+  &__body__links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__body__links > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__body__link {
+    font-family: var(--font-meet);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 24px;
+    color: var(--white60);
+    transition: var(--transition);
+  }
+
+  &__body__link:hover {
+    color: var(--white);
+  }
+
+  &__body__link + &__body__link {
+    margin-top: 16px;
+  }
+
+  &__body__subscribe {
+  }
+
+  &__body__subscribe .h2 {
+    color: var(--white);
+  }
+
+  &__copy__top {
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  &__copy__top a {
+    text-decoration: underline;
+  }
+
+  &__copy__bottom {
+    text-align: center;
+    font-size: 10px;
+    line-height: 16px;
+  }
+}
+
+@media (max-width: 1441px) {
+  .footer {
+    &__body {
+      grid-template-columns: 40% 40%;
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .footer {
+    &__body {
+      grid-template-columns: 40% 45%;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    display: none;
+  }
+}

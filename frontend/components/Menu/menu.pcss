@@ -1,0 +1,77 @@
+.menu{
+  position: fixed;
+  width: 100%;
+  height: 45vh;
+  min-height: 508px;
+  background-color: var(--black);
+  z-index: 10;
+  padding: 0 20px 40px 20px;
+  &__inner{
+    position: relative;
+    padding-top: 114px;
+    height: 100%;
+    overflow: hidden;
+  }
+  .nav{
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0;
+    border-bottom: 1px solid var(--white15);
+    background-color: var(--black);
+  }
+  .nav__link{
+    color: var(--white);
+    width: 100%;
+  }
+  .nav__link:hover{
+    text-decoration: underline;
+    color: var(--white);
+  }
+  .nav__right__meet, .nav__right__lang{
+    color: var(--white);
+  }
+  .nav__right__lang:hover{
+    opacity: 1;
+    text-decoration: underline;
+  }
+  &__body{
+    display: grid;
+    grid-template-columns: 320px minmax(auto, 300px) 306px ;
+    column-gap: 32px;
+    height: 100%;
+  }
+  &__body__left .h1{
+    color: var(--white);
+  }
+  &__body__left li{
+    font-family: var(--font-meet);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 24px;
+    transition: var(--transition);
+  }
+  &__body__left li:hover{
+    opacity: 1;
+  }
+  &__body__left li + li{
+    margin-top: 16px;
+  }
+  &__body__right{
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+.menu__body--menu{
+  display: flex;
+  .menu__body__left + .menu__body__left{
+    margin-left: 62px;
+  }
+}
