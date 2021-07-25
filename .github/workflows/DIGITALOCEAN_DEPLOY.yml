@@ -12,9 +12,8 @@ jobs:
       - uses: actions/checkout@master
       - name: Create .env
         run: |
-          ls
-          echo "STRAPI_PORT=$(cat ./ports.json | json STRAPI_PORT)" > .env
-          echo "POSTGRESS_PORT=$(cat ./ports.json | json POSTGRESS_PORT)" > .env
+          echo "STRAPI_PORT=$(cat ./ports.json | json STRAPI_PORT)" > .env \
+          echo "POSTGRESS_PORT=$(cat ./ports.json | json POSTGRESS_PORT)" > .env \
           echo "FRONTEND_PORT=$(cat g./ports.json | json FRONTEND_PORT)" > .env
 
       - name: Run build
