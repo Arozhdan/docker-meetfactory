@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile.dev
       context: ./frontend
     volumes:
-      - .frontend:/usr/src/app
+      - ./frontend:/usr/src/app
     ports:
       - "5333:5333"
     depends_on:
@@ -19,7 +19,8 @@ services:
       POSTGRES_PORT: ${DATABASE_PORT}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
-      - postgres:/var/lib/postgresql/data
+      - ./postgres:/var/lib/postgresql/data
+
   strapi:
     image: strapi/strapi
     environment:
@@ -30,7 +31,7 @@ services:
       DATABASE_USERNAME: ${POSTGRES_USER}
       DATABASE_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
-      - strapi:/srv/app
+      - ./strapi:/srv/app
     ports:
       - "1337:1337"
     depends_on:
