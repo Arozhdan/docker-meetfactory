@@ -16,5 +16,10 @@ jobs:
           POSTGRES_USER=${{secrets.POSTGRES_USER}}
           POSTGRES_PASSWORD=${{secrets.POSTGRES_PASSWORD}} 
           DATABASE_PORT=${{secrets.DATABASE_PORT}}" > .env
+      
+      - name: Install frontend dependencies
+        run: | 
+          cd frontend
+          yarn
       - name: Run build
         run: docker-compose up -d
