@@ -7,17 +7,17 @@ services:
     volumes:
       - ./frontend:/usr/src/app
     ports:
-      - "${FRONTEND_PORT:-5333}:5333"
+      - "5333:5333"
     depends_on:
       - postgres
       - strapi
   postgres:
     image: postgres
     environment:
-      POSTGRES_DB: strapi
-      POSTGRES_USER: strapi
-      POSTGRES_PORT: ${POSTGRES_PORT}
-      POSTGRES_PASSWORD: strapi
+      POSTGRES_DB: ${secrets.POSTGRES_DB}
+      POSTGRES_USER: ${secrets.POSTGRES_USER}
+      POSTGRES_PORT: ${secrets.DATABASE_PORT}
+      POSTGRES_PASSWORD: ${secrets.POSTGRES_PASSWORD}
     volumes:
       - ./postgres:/var/lib/postgresql/data
 
@@ -26,13 +26,13 @@ services:
     environment:
       DATABASE_CLIENT: postgres
       DATABASE_HOST: postgres
-      DATABASE_NAME: strapi
-      DATABASE_PORT: ${POSTGRES_PORT}
-      DATABASE_USERNAME: strapi
-      DATABASE_PASSWORD: strapi
+      DATABASE_NAME: ${secrets.POSTGRES_DB}
+      DATABASE_PORT: ${secrets.DATABASE_PORT}
+      DATABASE_USERNAME: ${secrets.POSTGRES_USER}
+      DATABASE_PASSWORD: ${secrets.POSTGRES_PASSWORD}
     volumes:
       - ./strapi:/srv/app
     ports:
-      - "${STRAPI_PORT:-1337}:1337"
+      - "1337:1337"
     depends_on:
       - postgres
