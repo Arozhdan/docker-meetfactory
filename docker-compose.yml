@@ -1,16 +1,5 @@
 version: "3"
 services:
-  frontend:
-    build:
-      dockerfile: Dockerfile.dev
-      context: ./frontend
-    volumes:
-      - ./frontend:/usr/src/app
-    ports:
-      - "5333:5333"
-    depends_on:
-      - postgres
-      - strapi
   postgres:
     image: postgres
     environment:
@@ -36,3 +25,15 @@ services:
       - "1337:1337"
     depends_on:
       - postgres
+
+  frontend:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./frontend
+    volumes:
+      - ./frontend:/usr/src/app
+    ports:
+      - "5333:5333"
+    depends_on:
+      - postgres
+      - strapi

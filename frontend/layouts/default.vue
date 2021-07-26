@@ -9,6 +9,7 @@
     <Nav :nav-shadow="navShadow" @showMenu="menuIsVisible=true" />
     <MobileNav @showMenu="mobileMenuIsVisible=true" />
     <Nuxt />
+    123
     <Footer />
     <FooterMob />
   </div>
