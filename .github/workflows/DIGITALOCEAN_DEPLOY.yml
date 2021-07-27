@@ -23,5 +23,7 @@ jobs:
         run: | 
           cd frontend
           yarn
+      - name: Stop all the previous containers
+        run: docker-compose down
       - name: Run build
         run: docker-compose up -d
