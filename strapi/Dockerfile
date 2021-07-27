@@ -12,9 +12,7 @@ COPY public/robots.txt public/
 COPY extensions/ extensions/
 COPY api/ api/
 COPY config/ config/
-
 ENV NODE_ENV production
-
 RUN yarn build
 
 EXPOSE 1337
