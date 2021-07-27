@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "single_locals",
+  "info": {
+    "name": "single local"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "test": {
+      "type": "string"
+    }
+  }
+}
