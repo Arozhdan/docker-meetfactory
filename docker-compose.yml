@@ -21,6 +21,7 @@ services:
       DATABASE_USERNAME: "${POSTGRES_USER}"
       DATABASE_PASSWORD: "${POSTGRES_PASSWORD}"
     volumes:
+      - /srv/app/node_modules
       - ./strapi:/srv/app
     ports:
       - "1337:1337"
