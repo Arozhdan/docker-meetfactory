@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 COPY . ./
 RUN yarn
-RUN build
+RUN yarn build
 EXPOSE 5333
 ENV HOST=0.0.0.0
 ENV PORT=5333
