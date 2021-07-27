@@ -7,7 +7,11 @@ COPY ./yarn.lock ./
 
 RUN yarn install
 
-COPY . .
+COPY favicon.ico .
+COPY public/robots.txt public/
+COPY extensions/ extensions/
+COPY api/ api/
+COPY config/ config/
 
 ENV NODE_ENV production
 
