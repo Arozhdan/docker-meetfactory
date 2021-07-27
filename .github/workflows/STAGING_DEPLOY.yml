@@ -17,6 +17,7 @@ jobs:
           ls
       - name: Create .env
         run: |
+          cat ./ports.json
           echo "POSTGRES_DB=strapi 
           POSTGRES_USER=strapi
           POSTGRES_PASSWORD=strapi
