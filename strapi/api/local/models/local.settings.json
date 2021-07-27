@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "locals",
+  "info": {
+    "name": "local"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "test": {
+      "type": "string"
+    }
+  }
+}
