@@ -11,7 +11,8 @@ services:
       - ./postgres:/var/lib/postgresql/data
 
   strapi:
-    image: strapi/strapi
+    build:
+      context: ./strapi
     environment:
       DATABASE_CLIENT: postgres
       DATABASE_HOST: postgres
