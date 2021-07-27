@@ -1,7 +1,10 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  env: {
+    baseURL: process.env.BASE_URL
+  },
   server: {
-    port: 5333
+    port: process.env.FRONTEND_PORT
   },
   head: {
     title: 'meetfactory',

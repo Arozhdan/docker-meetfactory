@@ -15,10 +15,14 @@ jobs:
       - name: Where am i
         run: |
           ls
-          cat package.json
-          cd ../ && ls
       - name: Create .env
-        run:  echo "DATABASE_PORT=${{secrets.DATABASE_PORT}}" > .env
+        run: |
+          echo "POSTGRES_DB=strapi 
+          POSTGRES_USER=strapi
+          POSTGRES_PASSWORD=strapi
+          DATABASE_PORT=${cat ./ports.json | json STAGING_POSTGRES}
+          FRONTEND_PORT=${cat ./ports.json | json STAGING_FRONTEND}
+          STRAPI_PORT=${cat ./ports.json | json STAGING_STRAPI}" > .env
       
       - name: Install frontend dependencies
         run: | 
