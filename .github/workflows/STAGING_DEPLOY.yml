@@ -1,8 +1,8 @@
-name: DIGITALOCEAN_DEPLOY
+name: STAGING_DEPLOY
 
 on:
   push:
-    branches: [master]
+    branches: [develop]
 
 jobs:
   Build:

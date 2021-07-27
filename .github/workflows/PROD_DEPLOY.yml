@@ -1,0 +1,28 @@
+name: PRODUCTION_DEPLOY
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  Build:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@master
+        with:
+          clean: false
+      - name: Create .env
+        run: |
+          echo "POSTGRES_DB=${{secrets.POSTGRES_DB}} 
+          POSTGRES_USER=${{secrets.POSTGRES_USER}}
+          POSTGRES_PASSWORD=${{secrets.POSTGRES_PASSWORD}} 
+          DATABASE_PORT=${{secrets.DATABASE_PORT}}" > .env
+      
+      - name: Install frontend dependencies
+        run: | 
+          cd frontend
+          yarn
+      - name: Stop all the previous containers
+        run: docker-compose down
+      - name: Run build
+        run: docker-compose up -d
