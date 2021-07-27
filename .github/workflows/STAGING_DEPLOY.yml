@@ -13,8 +13,7 @@ jobs:
         with:
           clean: false
       - name: Create .env
-        run: |
-          DATABASE_PORT=${{secrets.DATABASE_PORT}}" > .env
+        run:  echo DATABASE_PORT=${{secrets.DATABASE_PORT}}" > .env
       
       - name: Install frontend dependencies
         run: | 
