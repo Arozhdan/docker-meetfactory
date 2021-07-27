@@ -10,8 +10,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@master
-        with:
-          clean: false
       - name: Create .env
         run: |
           echo "POSTGRES_DB=${{secrets.POSTGRES_DB}} 
