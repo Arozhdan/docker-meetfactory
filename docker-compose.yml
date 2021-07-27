@@ -32,6 +32,7 @@ services:
     build:
       context: ./frontend
     volumes:
+      - /usr/src/app/dist
       - ./frontend:/usr/src/app
     ports:
       - "5333:5333"
