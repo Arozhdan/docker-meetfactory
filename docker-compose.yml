@@ -21,8 +21,10 @@ services:
       DATABASE_USERNAME: "${POSTGRES_USER}"
       DATABASE_PASSWORD: "${POSTGRES_PASSWORD}"
     volumes:
-      - /srv/app/node_modules
-      - ./strapi:/srv/app
+      - ./services/api/api:/srv/app/api
+      - ./services/api/config:/srv/app/config
+      - ./services/api/extensions:/srv/app/extensions
+      - ./services/api/public:/srv/app/public
     ports:
       - "1337:1337"
     depends_on:
@@ -32,8 +34,7 @@ services:
     build:
       context: ./frontend
     volumes:
-      - /usr/src/app/dist
-      - ./frontend:/usr/src/app
+      - /usr/src/app/node_modules
     ports:
       - "5333:5333"
     depends_on:
