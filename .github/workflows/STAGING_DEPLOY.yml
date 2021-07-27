@@ -17,13 +17,15 @@ jobs:
           ls
       - name: Create .env
         run: |
-          cat ./ports.json
-          echo "POSTGRES_DB=strapi 
+          source <filename>
+          echo "
+          POSTGRES_DB=strapi 
           POSTGRES_USER=strapi
           POSTGRES_PASSWORD=strapi
-          DATABASE_PORT=${{cat ./ports.json | json STAGING_POSTGRES}}
-          FRONTEND_PORT=${{cat ./ports.json | json STAGING_FRONTEND}}
-          STRAPI_PORT=${{cat ./ports.json | json STAGING_STRAPI}"} > .env
+          DATABASE_PORT=${STAGING_POSTGRES}
+          FRONTEND_PORT=${STAGING_FRONTEND}
+          STRAPI_PORT=${STAGING_STRAPI}
+          " > .env
       
       - name: Install frontend dependencies
         run: | 
