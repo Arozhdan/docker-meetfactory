@@ -14,6 +14,7 @@ services:
     - "${DATABASE_PORT}"
     networks:
       - prod
+      command: -p ${DATABASE_PORT}
 
   strapi_prod:
     build:
