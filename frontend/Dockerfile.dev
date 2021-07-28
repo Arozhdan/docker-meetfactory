@@ -5,9 +5,5 @@ WORKDIR /usr/src/app
 COPY . ./
 RUN yarn
 
-EXPOSE 5333
-
-ENV HOST=0.0.0.0
-ENV PORT=5333
 
 CMD [ "yarn", "dev" ]
