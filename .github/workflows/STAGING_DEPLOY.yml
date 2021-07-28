@@ -10,11 +10,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@master
-      - uses: actions/setup-node@v1
         with:
           clean: false
       - name: Install linux json parser package
         run: npm install -g json
+        
       - name: Create .env
         run: |
           echo "
