@@ -9,5 +9,6 @@ jobs:
   Fetch_db:
     runs-on: [self-hosted, staging worker]
     steps:
+      - name: copy db
       - run: |
-          echo "Hello !"
+          cp -R /home/production/actions-runner/_prod/docker-meetfactory/docker-meetfactory/postgres /home/staging/actions-runner/_prod/docker-meetfactory/docker-meetfactory 
