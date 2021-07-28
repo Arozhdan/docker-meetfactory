@@ -18,4 +18,7 @@ RUN yarn build
 
 # Clear the cache
 RUN yarn cache clean
+
+EXPOSE ${FRONTEND_PORT}
+
 CMD [ "yarn", "start" ]
