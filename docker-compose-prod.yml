@@ -28,7 +28,7 @@ services:
     ports:
       - "${STRAPI_PORT}:1337"
     depends_on:
-      - postgres
+      - postgres_prod
 
   frontend_prod:
     build:
@@ -39,5 +39,5 @@ services:
     ports:
       - "${FRONTEND_PORT}:3000"
     depends_on:
-      - postgres
-      - strapi
+      - postgres_prod
+      - strapi_prod
