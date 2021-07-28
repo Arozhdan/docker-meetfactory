@@ -1,9 +1,8 @@
 {
-  "kind": "collectionType",
-  "collectionName": "locals",
+  "kind": "singleType",
+  "collectionName": "local_single_types",
   "info": {
-    "name": "local",
-    "description": ""
+    "name": "local single type"
   },
   "options": {
     "increments": true,
@@ -12,8 +11,8 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "test2": {
-      "type": "text"
+    "some_field_created_locally": {
+      "type": "string"
     }
   }
 }

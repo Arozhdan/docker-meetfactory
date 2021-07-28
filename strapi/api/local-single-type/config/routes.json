@@ -2,24 +2,24 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/single-local",
-      "handler": "single-local.find",
+      "path": "/local-single-type",
+      "handler": "local-single-type.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/single-local",
-      "handler": "single-local.update",
+      "path": "/local-single-type",
+      "handler": "local-single-type.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/single-local",
-      "handler": "single-local.delete",
+      "path": "/local-single-type",
+      "handler": "local-single-type.delete",
       "config": {
         "policies": []
       }

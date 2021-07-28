@@ -7,22 +7,37 @@ on:
 jobs:
   Build:
     runs-on: self-hosted
+
     steps:
       - uses: actions/checkout@master
         with:
           clean: false
-      - name: Create .env
-        run: |
-          echo "POSTGRES_DB=${{secrets.POSTGRES_DB}} 
-          POSTGRES_USER=${{secrets.POSTGRES_USER}}
-          POSTGRES_PASSWORD=${{secrets.POSTGRES_PASSWORD}} 
-          DATABASE_PORT=${{secrets.DATABASE_PORT}}" > .env
       
-      - name: Install frontend dependencies
+      - name: Install linux json parser package
+        run: npm install -g json
+
+      - name: Create .env
+      #  run: echo "STAGING_PORT=$(cat ./.github/ports.json | json STAGING_PORT)" >> $GITHUB_ENV
+        run: |
+          echo "
+          POSTGRES_DB=strapi 
+          POSTGRES_USER=strapi
+          POSTGRES_PASSWORD=strapi
+          DATABASE_PORT=$(cat ./ports.json | json PROD_POSTGRES)
+          FRONTEND_PORT=$(cat ./ports.json | json PROD_FRONTEND)
+          STRAPI_PORT=$(cat ./ports.json | json PROD_STRAPI)
+          " > .env
+      
+      - name: Remove frontend dependencies
         run: | 
           cd frontend
-          yarn
-      - name: Stop all the previous containers
+          rm node_modules
+
+      - name: Stop running containers
         run: docker-compose down
+
+      - name: Build containers
+        run: docker-compose build
+
       - name: Run build
         run: docker-compose up -d
