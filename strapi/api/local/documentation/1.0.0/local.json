@@ -522,7 +522,7 @@
           "id": {
             "type": "string"
           },
-          "test": {
+          "test2": {
             "type": "string"
           },
           "published_at": {
@@ -533,7 +533,7 @@
       },
       "NewLocal": {
         "properties": {
-          "test": {
+          "test2": {
             "type": "string"
           },
           "published_at": {
