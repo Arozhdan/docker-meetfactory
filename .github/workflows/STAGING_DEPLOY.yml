@@ -33,7 +33,7 @@ jobs:
           yarn
 
       - name: Build containers
-        run: docker-compose build
+        run: docker-compose -f docker-compose-staging.yml build
 
       - name: Run build
         run: docker-compose up -d

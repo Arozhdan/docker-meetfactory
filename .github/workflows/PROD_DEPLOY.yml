@@ -30,7 +30,7 @@ jobs:
       
 
       - name: Build containers
-        run: docker-compose build
+        run: docker-compose -f docker-compose-prod.yml build
 
       - name: Run build
         run: docker-compose up -d

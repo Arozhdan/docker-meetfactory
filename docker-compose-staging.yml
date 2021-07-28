@@ -1,6 +1,6 @@
 version: "3"
 services:
-  postgres_prod:
+  postgres:
     image: postgres
     environment:
       POSTGRES_DB: "${POSTGRES_DB}"
@@ -10,8 +10,9 @@ services:
     volumes:
       - ./postgres:/var/lib/postgresql/data
 
-  strapi_prod:
-    image: strapi/strapi
+  strapi:
+    build:
+      context: ./strapi
     environment:
       DATABASE_CLIENT: postgres
       DATABASE_HOST: postgres
@@ -20,20 +21,23 @@ services:
       DATABASE_USERNAME: "${POSTGRES_USER}"
       DATABASE_PASSWORD: "${POSTGRES_PASSWORD}"
     volumes:
-      - /srv/app/node_modules
-      - ./strapi:/srv/app
+      - ./strapi/api:/srv/app/api
+      - ./strapi/config:/srv/app/config
+      - ./strapi/extensions:/srv/app/extensions
+      - ./strapi/public:/srv/app/public
     ports:
-      - "1337:1337"
+      - "${STRAPI_PORT}:1337"
     depends_on:
       - postgres
 
-  frontend_prod:
+  frontend:
     build:
+      dockerfile: Dockerfile
       context: ./frontend
     volumes:
-      - ./frontend:/usr/src/app
+      - /usr/src/app/node_modules
     ports:
-      - "5333:5333"
+      - "${FRONTEND_PORT}:3000"
     depends_on:
       - postgres
       - strapi
