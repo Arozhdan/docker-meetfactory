@@ -19,6 +19,7 @@ RUN yarn build
 # Clear the cache
 RUN yarn cache clean
 
+ENV HOST 0.0.0.0
 EXPOSE 3000
 
 CMD [ "yarn", "start" ]

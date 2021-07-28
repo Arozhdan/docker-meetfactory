@@ -41,5 +41,3 @@ services:
     depends_on:
       - postgres
       - strapi
-    environment:
-      FRONTEND_PORT: ${FRONTEND_PORT}
