@@ -37,7 +37,7 @@ services:
     volumes:
       - /usr/src/app/node_modules
     ports:
-      - "${FRONTEND_PORT}:${FRONTEND_PORT}"
+      - "${FRONTEND_PORT}:3000"
     depends_on:
       - postgres
       - strapi
