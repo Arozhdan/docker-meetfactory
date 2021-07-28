@@ -17,7 +17,7 @@ services:
       DATABASE_CLIENT: postgres
       DATABASE_HOST: postgres
       DATABASE_NAME: "${POSTGRES_DB}"
-      DATABASE_PORT: "${DATABASE_PORT}"
+      DATABASE_PORT: "5432"
       DATABASE_USERNAME: "${POSTGRES_USER}"
       DATABASE_PASSWORD: "${POSTGRES_PASSWORD}"
     volumes:
