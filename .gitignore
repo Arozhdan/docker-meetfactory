@@ -1,6 +1,7 @@
 .env
 /postgres
 /strapi/public/
+sync.sh
 # Global excludes across all subdirectories
 *.o
 *.obj
