@@ -8,6 +8,7 @@ on:
 jobs:
   Fetch_db:
     runs-on: [self-hosted, staging worker]
+    
     steps:
       - name: copy db
       - run: |
