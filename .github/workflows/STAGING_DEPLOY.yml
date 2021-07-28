@@ -15,9 +15,19 @@ jobs:
       - name: Where am i
         run: |
           ls
+
+      - name: TEST
+        run: |
+          content=`cat ports.js`
+          # the following lines are only required for multi line json
+          content="${content//'%'/'%25'}"
+          content="${content//$'\n'/'%0A'}"
+          content="${content//$'\r'/'%0D'}"
+          # end of optional handling for multi line json
+          echo "::set-output name=packageJson::$content"
+
       - name: Create .env
         run: |
-          echo lalala ${source ports.js | STAGING_POSTGRES}
           echo "
           POSTGRES_DB=strapi 
           POSTGRES_USER=strapi
