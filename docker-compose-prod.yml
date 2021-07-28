@@ -10,11 +10,8 @@ services:
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
     volumes:
       - ./postgres:/var/lib/postgresql/data
-    expose:
-    - "${DATABASE_PORT}"
     networks:
       - prod
-    command: -p ${DATABASE_PORT}
 
   strapi_prod:
     build:
@@ -23,7 +20,7 @@ services:
       DATABASE_CLIENT: postgres
       DATABASE_HOST: postgres
       DATABASE_NAME: "${POSTGRES_DB}"
-      DATABASE_PORT: "${DATABASE_PORT}"
+      DATABASE_PORT: "5432"
       DATABASE_USERNAME: "${POSTGRES_USER}"
       DATABASE_PASSWORD: "${POSTGRES_PASSWORD}"
     volumes:
@@ -49,7 +46,7 @@ services:
     depends_on:
       - postgres_prod
       - strapi_prod
-
+      
 networks:
   prod:
     name: prod-network
