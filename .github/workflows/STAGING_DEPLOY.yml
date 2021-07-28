@@ -10,18 +10,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
         with:
           clean: false
-      - name: TEST
-        run: |
-          content=`cat ./ports.json`
-          # the following lines are only required for multi line json
-          content="${content//'%'/'%25'}"
-          content="${content//$'\n'/'%0A'}"
-          content="${content//$'\r'/'%0D'}"
-          # end of optional handling for multi line json
-          echo "::set-output name=packageJson::$content"
-          echo "${{fromJson(steps.set_var.outputs.packageJson).STAGING_POSTGRES}}"
 
       - name: Create .env
         run: |
