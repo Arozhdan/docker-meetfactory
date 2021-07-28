@@ -4,14 +4,10 @@ services:
     image: postgres
     environment:
       POSTGRES_DB: "${POSTGRES_DB}"
-      POSTGRES_PORT: "${DATABASE_PORT}"
       POSTGRES_USER: "${POSTGRES_USER}"
-      POSTGRES_PORT: "${DATABASE_PORT}"
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
     volumes:
       - ./postgres:/var/lib/postgresql/data
-    networks:
-      - prod
 
   strapi_prod:
     build:
@@ -20,7 +16,6 @@ services:
       DATABASE_CLIENT: postgres
       DATABASE_HOST: postgres_prod
       DATABASE_NAME: "${POSTGRES_DB}"
-      DATABASE_PORT: "5432"
       DATABASE_USERNAME: "${POSTGRES_USER}"
       DATABASE_PASSWORD: "${POSTGRES_PASSWORD}"
     volumes:
@@ -32,8 +27,6 @@ services:
       - "${STRAPI_PORT}:1337"
     depends_on:
       - postgres_prod
-    networks:
-      - prod
 
   frontend_prod:
     build:
@@ -46,7 +39,3 @@ services:
     depends_on:
       - postgres_prod
       - strapi_prod
-      
-networks:
-  prod:
-    name: prod-network

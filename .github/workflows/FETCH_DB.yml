@@ -1,4 +1,4 @@
-name: Manually triggered workflow
+name: Manually fetching data
 on:
   workflow_dispatch:
    inputs:
