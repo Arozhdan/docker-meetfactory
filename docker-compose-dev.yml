@@ -1,7 +1,7 @@
 version: "3"
 services:
   postgres:
-    image: postgres_prod
+    image: postgres
     environment:
       POSTGRES_DB: "${POSTGRES_DB}"
       POSTGRES_USER: "${POSTGRES_USER}"

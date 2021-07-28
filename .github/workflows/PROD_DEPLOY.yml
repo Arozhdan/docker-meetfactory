@@ -23,6 +23,7 @@ jobs:
           POSTGRES_DB=strapi 
           POSTGRES_USER=strapi
           POSTGRES_PASSWORD=strapi
+          DATABASE_HOST=postgres_prod
           DATABASE_PORT=$(cat ./ports.json | json PROD_POSTGRES)
           FRONTEND_PORT=$(cat ./ports.json | json PROD_FRONTEND)
           STRAPI_PORT=$(cat ./ports.json | json PROD_STRAPI)
