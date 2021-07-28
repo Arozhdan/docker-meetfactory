@@ -1,12 +1,12 @@
 {
   "paths": {
-    "/single-local": {
+    "/local-single-type": {
       "get": {
         "deprecated": false,
-        "description": "Find all the single-local's records",
+        "description": "Find all the local-single-type's records",
         "responses": {
           "200": {
-            "description": "Retrieve single-local document(s)",
+            "description": "Retrieve local-single-type document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Single-local"
+          "Local-single-type"
         ],
         "parameters": [
           {
@@ -195,10 +195,10 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single single-local record",
+        "description": "Update a single local-single-type record",
         "responses": {
           "200": {
-            "description": "Retrieve single-local document(s)",
+            "description": "Retrieve local-single-type document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -244,7 +244,7 @@
         },
         "summary": "",
         "tags": [
-          "Single-local"
+          "Local-single-type"
         ],
         "requestBody": {
           "description": "",
@@ -252,7 +252,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewSingle-local"
+                "$ref": "#/components/schemas/NewLocal-single-type"
               }
             }
           }
@@ -261,10 +261,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single single-local record",
+        "description": "Delete a single local-single-type record",
         "responses": {
           "200": {
-            "description": "deletes a single single-local based on the ID supplied",
+            "description": "deletes a single local-single-type based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -307,7 +307,7 @@
         },
         "summary": "",
         "tags": [
-          "Single-local"
+          "Local-single-type"
         ],
         "parameters": []
       }
@@ -315,7 +315,7 @@
   },
   "components": {
     "schemas": {
-      "Single-local": {
+      "Local-single-type": {
         "required": [
           "id"
         ],
@@ -323,7 +323,7 @@
           "id": {
             "type": "string"
           },
-          "test": {
+          "some_field_created_locally": {
             "type": "string"
           },
           "published_at": {
@@ -332,9 +332,9 @@
           }
         }
       },
-      "NewSingle-local": {
+      "NewLocal-single-type": {
         "properties": {
-          "test": {
+          "some_field_created_locally": {
             "type": "string"
           },
           "published_at": {

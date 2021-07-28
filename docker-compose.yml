@@ -26,17 +26,18 @@ services:
       - ./strapi/extensions:/srv/app/extensions
       - ./strapi/public:/srv/app/public
     ports:
-      - "1337:1337"
+      - "${STRAPI_PORT}:1337"
     depends_on:
       - postgres
 
   frontend:
     build:
+      dockerfile: Dockerfile
       context: ./frontend
     volumes:
       - /usr/src/app/node_modules
     ports:
-      - "5333:5333"
+      - "${FRONTEND_PORT}:3000"
     depends_on:
       - postgres
       - strapi

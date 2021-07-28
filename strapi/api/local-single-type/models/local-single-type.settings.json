@@ -1,8 +1,8 @@
 {
   "kind": "singleType",
-  "collectionName": "single_locals",
+  "collectionName": "local_single_types",
   "info": {
-    "name": "single local"
+    "name": "local single type"
   },
   "options": {
     "increments": true,
@@ -11,7 +11,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "test": {
+    "some_field_created_locally": {
       "type": "string"
     }
   }

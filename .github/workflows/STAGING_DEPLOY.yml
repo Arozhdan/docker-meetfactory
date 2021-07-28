@@ -1,0 +1,43 @@
+name: STAGING_DEPLOY
+
+on:
+  push:
+    branches: [develop]
+
+jobs:
+  Build:
+    runs-on: self-hosted
+
+    steps:
+      - uses: actions/checkout@master
+        with:
+          clean: false
+      
+      - name: Install linux json parser package
+        run: npm install -g json
+
+      - name: Create .env
+      #  run: echo "STAGING_PORT=$(cat ./.github/ports.json | json STAGING_PORT)" >> $GITHUB_ENV
+        run: |
+          echo "
+          POSTGRES_DB=strapi 
+          POSTGRES_USER=strapi
+          POSTGRES_PASSWORD=strapi
+          DATABASE_PORT=$(cat ./ports.json | json STAGING_POSTGRES)
+          FRONTEND_PORT=$(cat ./ports.json | json STAGING_FRONTEND)
+          STRAPI_PORT=$(cat ./ports.json | json STAGING_STRAPI)
+          " > .env
+      
+      - name: Install frontend dependencies
+        run: | 
+          cd frontend
+          yarn
+
+      - name: Stop running containers
+        run: docker-compose down
+
+      - name: Build containers
+        run: docker-compose build
+
+      - name: Run build
+        run: docker-compose up -d

@@ -1,4 +1,4 @@
-FROM node:10-alpine
+FROM node:14-alpine
 
 # Create app directory
 RUN mkdir -p /usr/src/app
@@ -11,8 +11,6 @@ RUN yarn install
 
 # Set environment variables
 ENV NODE_ENV production
-ENV NUXT_HOST 0.0.0.0
-ENV NUXT_PORT 3000
 
 # Bundle app source
 COPY . /usr/src/app
@@ -21,5 +19,7 @@ RUN yarn build
 # Clear the cache
 RUN yarn cache clean
 
-EXPOSE 5333
+ENV HOST 0.0.0.0
+EXPOSE 3000
+
 CMD [ "yarn", "start" ]
