@@ -9,6 +9,8 @@ services:
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
     volumes:
       - ./postgres:/var/lib/postgresql/data
+    ports:
+      - "${PROD_POSTGRES}:5432"
 
   strapi_prod:
     build:
