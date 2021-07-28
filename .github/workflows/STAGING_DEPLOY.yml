@@ -17,14 +17,15 @@ jobs:
         run: npm install -g json
 
       - name: Create .env
+      #  run: echo "STAGING_PORT=$(cat ./.github/ports.json | json STAGING_PORT)" >> $GITHUB_ENV
         run: |
           echo "
           POSTGRES_DB=strapi 
           POSTGRES_USER=strapi
           POSTGRES_PASSWORD=strapi
-          DATABASE_PORT=${source ports.js | STAGING_POSTGRES}
-          FRONTEND_PORT=${source ports.js | STAGING_FRONTEND}
-          STRAPI_PORT=${source ports.js | STAGING_STRAPI}
+          DATABASE_PORT=$(cat ./.github/ports.json | json STAGING_POSTGRES)
+          FRONTEND_PORT=$(cat ./.github/ports.json | json STAGING_FRONTEND)
+          STRAPI_PORT=$(cat ./.github/ports.json | json STAGING_STRAPI)
           " > .env
       
       - name: Install frontend dependencies
