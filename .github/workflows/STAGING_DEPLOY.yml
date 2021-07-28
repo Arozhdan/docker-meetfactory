@@ -33,9 +33,6 @@ jobs:
           cd frontend
           yarn
 
-      - name: Stop running containers
-        run: docker-compose down
-
       - name: Build containers
         run: docker-compose build
 
