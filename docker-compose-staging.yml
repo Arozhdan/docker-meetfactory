@@ -9,15 +9,16 @@ services:
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
     volumes:
       - ./postgres:/var/lib/postgresql/data
-
+    ports:
+      - "${DATABASE_PORT}:5432"
   strapi:
     build:
       context: ./strapi
     environment:
       DATABASE_CLIENT: postgres
-      DATABASE_HOST: postgres
+      DATABASE_HOST: 0.0.0.0
       DATABASE_NAME: "${POSTGRES_DB}"
-      DATABASE_PORT: "5432"
+      DATABASE_PORT: "${DATABASE_PORT}"
       DATABASE_USERNAME: "${POSTGRES_USER}"
       DATABASE_PASSWORD: "${POSTGRES_PASSWORD}"
     volumes:
