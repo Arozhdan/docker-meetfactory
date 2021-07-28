@@ -17,7 +17,6 @@ jobs:
         run: npm install -g json
 
       - name: Create .env
-      #  run: echo "STAGING_PORT=$(cat ./.github/ports.json | json STAGING_PORT)" >> $GITHUB_ENV
         run: |
           echo "
           POSTGRES_DB=strapi 
