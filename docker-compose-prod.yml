@@ -18,7 +18,7 @@ services:
       context: ./strapi
     environment:
       DATABASE_CLIENT: postgres
-      DATABASE_HOST: postgres
+      DATABASE_HOST: postgres_prod
       DATABASE_NAME: "${POSTGRES_DB}"
       DATABASE_PORT: "5432"
       DATABASE_USERNAME: "${POSTGRES_USER}"
