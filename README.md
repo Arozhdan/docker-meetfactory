@@ -10,7 +10,7 @@ This is the step-by-step instruction explaining the development process, publish
 
 ## Local development
 
-- ###### Clone develop branch
+- ###### Clone develop branch / checkout develop branch
 - ###### Sync databases (if needed)
   - Manually with Filezilla (copy postgress folder into the root dir of the project ) / may need to reset the access rights
     **OR**
