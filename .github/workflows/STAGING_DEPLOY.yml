@@ -12,13 +12,9 @@ jobs:
       - uses: actions/checkout@master
         with:
           clean: false
-      - name: Where am i
-        run: |
-          ls
-
       - name: TEST
         run: |
-          content=`cat ports.js`
+          content=`cat ./ports.json`
           # the following lines are only required for multi line json
           content="${content//'%'/'%25'}"
           content="${content//$'\n'/'%0A'}"
