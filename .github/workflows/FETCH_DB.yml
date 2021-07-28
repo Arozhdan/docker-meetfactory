@@ -10,4 +10,4 @@ jobs:
     runs-on: [self-hosted, staging worker]
     steps:
       - name: copy db
-        run: cp -R /home/production/actions-runner/_prod/docker-meetfactory/docker-meetfactory/postgres /home/staging/actions-runner/_prod/docker-meetfactory/docker-meetfactory 
+        run: cp -R /home/production/actions-runner/_prod/docker-meetfactory/docker-meetfactory/postgres /home/staging/actions-runner/_work/docker-meetfactory/docker-meetfactory 
