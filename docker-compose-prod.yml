@@ -1,0 +1,43 @@
+version: "3"
+services:
+  postgres_prod:
+    image: postgres
+    environment:
+      POSTGRES_DB: "${POSTGRES_DB}"
+      POSTGRES_USER: "${POSTGRES_USER}"
+      POSTGRES_PORT: "${DATABASE_PORT}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+
+  strapi_prod:
+    build:
+      context: ./strapi
+    environment:
+      DATABASE_CLIENT: postgres
+      DATABASE_HOST: postgres
+      DATABASE_NAME: "${POSTGRES_DB}"
+      DATABASE_PORT: "${DATABASE_PORT}"
+      DATABASE_USERNAME: "${POSTGRES_USER}"
+      DATABASE_PASSWORD: "${POSTGRES_PASSWORD}"
+    volumes:
+      - ./strapi/api:/srv/app/api
+      - ./strapi/config:/srv/app/config
+      - ./strapi/extensions:/srv/app/extensions
+      - ./strapi/public:/srv/app/public
+    ports:
+      - "${STRAPI_PORT}:1337"
+    depends_on:
+      - postgres
+
+  frontend_prod:
+    build:
+      dockerfile: Dockerfile
+      context: ./frontend
+    volumes:
+      - /usr/src/app/node_modules
+    ports:
+      - "${FRONTEND_PORT}:3000"
+    depends_on:
+      - postgres
+      - strapi
