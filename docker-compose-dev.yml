@@ -1,6 +1,6 @@
 version: "3"
 services:
-  postgres_prod:
+  postgres:
     image: postgres
     environment:
       POSTGRES_DB: "${POSTGRES_DB}"
@@ -10,7 +10,7 @@ services:
     volumes:
       - ./postgres:/var/lib/postgresql/data
 
-  strapi_prod:
+  strapi:
     image: strapi/strapi
     environment:
       DATABASE_CLIENT: postgres
@@ -27,7 +27,7 @@ services:
     depends_on:
       - postgres
 
-  frontend_prod:
+  frontend:
     build:
       context: ./frontend
     volumes:

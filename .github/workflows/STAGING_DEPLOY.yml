@@ -36,4 +36,4 @@ jobs:
         run: docker-compose -f docker-compose-staging.yml build
 
       - name: Run build
-        run: docker-compose up -d
+        run: docker-compose -f docker-compose-staging.yml up -d
