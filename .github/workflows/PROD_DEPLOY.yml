@@ -28,10 +28,6 @@ jobs:
           STRAPI_PORT=$(cat ./ports.json | json PROD_STRAPI)
           " > .env
       
-      - name: Remove frontend dependencies
-        run: | 
-          cd frontend
-          rm node_modules
 
       - name: Stop running containers
         run: docker-compose down
