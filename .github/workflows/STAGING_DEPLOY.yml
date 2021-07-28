@@ -21,6 +21,7 @@ jobs:
           content="${content//$'\r'/'%0D'}"
           # end of optional handling for multi line json
           echo "::set-output name=packageJson::$content"
+          echo "${{fromJson(steps.set_var.outputs.packageJson).STAGING_POSTGRES}}"
 
       - name: Create .env
         run: |
