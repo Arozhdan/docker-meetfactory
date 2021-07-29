@@ -2,11 +2,10 @@ name: FETCH_DATA_FROM_DATABASE
 on:
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: "From:
-          's: Staging server'\n 'l:file pushed from local machine'"     
+      source:
+        description: "From: 'p: Production server' | 'f: File pushed from local machine'"     
         required: true
-        default: 'warning'
+        default: 'p'
 
   
 jobs:
@@ -14,9 +13,11 @@ jobs:
     runs-on: [self-hosted, staging worker]
     steps:
       - name: Copy production db
+      - if: github.event.inputs.source != 'f'
         run: |
           docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > /backup/dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
           docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > /backup/latest.sql
+      
       - name: Clear staging db
         run: |
           docker exec -t ${{github.event.repository.name}}_postgres_1 psql -U strapi -d strapi -c "
@@ -36,5 +37,10 @@ jobs:
           END \$\$ ;
           "
       - name: Insert data into staging db
+      - if: github.event.inputs.source != 'f'
         run: cat /backup/latest.sql | docker exec -i ${{github.event.repository.name}}_postgres_1 psql -U strapi
-        
+      
+      - name: Insert data into staging db
+      - if: github.event.inputs.source == 'f'
+        run: cat /backup/local.sql | docker exec -i ${{github.event.repository.name}}_postgres_1 psql -U strapi
+      
