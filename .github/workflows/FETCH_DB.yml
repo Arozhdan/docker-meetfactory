@@ -12,7 +12,7 @@ jobs:
           sudo docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > /backup/latest.sql
       - name: Clear staging db
         run: |
-          sudo docker exec -t ${{github.event.repository.name}}_postgres_1 psql -U strapi -d postgres -c "
+          sudo docker exec -t ${{github.event.repository.name}}_postgres_1 psql -U strapi -d postgres -c '
           DO $$ 
             DECLARE 
               r RECORD;
@@ -27,6 +27,6 @@ jobs:
                EXECUTE 'DROP TABLE IF EXISTS ' || quote_ident(r.table_name) || ' CASCADE';
             END LOOP;
           END $$ ;
-          "
+          '
       - name: Insert data into staging db
         run: cat /backup/latest.sql | docker exec -i ${{github.event.repository.name}}_postgres_1 psql -U strapi
