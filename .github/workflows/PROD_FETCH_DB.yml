@@ -1,0 +1,21 @@
+name: PRODUCTION_FETCH_DATA
+on:
+  workflow_dispatch:
+  
+jobs:
+  Fetch_db:
+    runs-on: [self-hosted, production worker]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          clean: false
+
+      - name: Backup production db
+        run: docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > /backup/dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
+    
+      - name: Copy staging db
+        run: docker exec -t ${{github.event.repository.name}}_postgres_1 pg_dumpall -c -U strapi > /backup/staging.sql
+      
+      - name: Insert data into prod db
+        run: cat /backup/staging.sql | docker exec -i ${{github.event.repository.name}}_postgres_prod_1 psql -U strapi
+     

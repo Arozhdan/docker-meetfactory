@@ -1,4 +1,4 @@
-name: FETCH_DATA_FROM_DATABASE
+name: STAGING_FETCH_DATA
 on:
   workflow_dispatch:
     inputs:
