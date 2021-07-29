@@ -12,6 +12,9 @@ jobs:
   Fetch_db:
     runs-on: [self-hosted, staging worker]
     steps:
+      - uses: actions/checkout@v2
+        with:
+          clean: false
       - if: github.event.inputs.source != 'f'
       - name: Copy production db
         run: |
