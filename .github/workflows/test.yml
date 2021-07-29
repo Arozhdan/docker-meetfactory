@@ -13,6 +13,6 @@ jobs:
         run: |
           sudo docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > /backup/dump.sql
           sudo docker exec -t ${{github.event.repository.name}}_postgres_1 psql -U strtapi -d postgres -c "DROP DATABASE strapi;"
-          sudo docker exec -t ${{github.event.repository.name}}_postgres_1 psql psql -U strtapi -d postgres -c "CREATE DATABASE strapi;"
+          sudo docker exec -t ${{github.event.repository.name}}_postgres_1 psql -U strtapi -d postgres -c "CREATE DATABASE strapi;"
           cat /backup/dump.sql | docker exec -i ${{github.event.repository.name}}_postgres_1 psql -U strapi
     
