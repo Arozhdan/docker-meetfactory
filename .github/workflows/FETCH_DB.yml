@@ -39,8 +39,7 @@ jobs:
       - name: Insert data into staging db
       - if: github.event.inputs.source != 'f'
         run: cat /backup/latest.sql | docker exec -i ${{github.event.repository.name}}_postgres_1 psql -U strapi
-      
+     
       - name: Insert data into staging db
       - if: github.event.inputs.source == 'f'
         run: cat /backup/local.sql | docker exec -i ${{github.event.repository.name}}_postgres_1 psql -U strapi
-      
