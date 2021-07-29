@@ -12,7 +12,7 @@ jobs:
   Fetch_db:
     runs-on: [self-hosted, staging worker]
     steps:
-      - if: "${{github.event.inputs.source != 'f'}}"
+      - if: github.event.inputs.source != 'f'
       - name: Copy production db
         run: |
           docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > /backup/dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
@@ -36,10 +36,10 @@ jobs:
             END LOOP;
           END \$\$ ;
           "
-      - if: "${{github.event.inputs.source != 'f'}}"
+      - if: github.event.inputs.source != 'f'
       - name: Insert data into staging db from prod db
         run: cat /backup/latest.sql | docker exec -i ${{github.event.repository.name}}_postgres_1 psql -U strapi
      
-      - if: "${{github.event.inputs.source == 'f'}}"
+      - if: github.event.inputs.source == 'f'
       - name: Insert data into staging db from file
         run: cat /backup/local.sql | docker exec -i ${{github.event.repository.name}}_postgres_1 psql -U strapi
