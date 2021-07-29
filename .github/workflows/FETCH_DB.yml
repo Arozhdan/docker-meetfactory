@@ -1,6 +1,13 @@
-name: FETCH_DATA_FROM_PRODUCTION
+name: FETCH_DATA_FROM_DATABASE
 on:
   workflow_dispatch:
+    inputs:
+      logLevel:
+        description: "From:
+          's: Staging server'\n 'l:file pushed from local machine'"     
+        required: true
+        default: 'warning'
+
   
 jobs:
   Fetch_db:
