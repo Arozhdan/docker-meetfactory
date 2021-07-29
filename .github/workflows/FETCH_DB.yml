@@ -13,9 +13,9 @@ jobs:
       - name: Clear staging db
         run: |
           sudo docker exec -t ${{github.event.repository.name}}_postgres_1 psql -U strapi -d postgres -c "
-          DO $$ DECLARE r RECORD;
+          DO;
           BEGIN
-            FOR r IN (SELECT strapi FROM pg_tables WHERE schemaname = current_schema()) LOOP
+            FOR RECORD IN (SELECT strapi FROM pg_tables WHERE schemaname = current_schema()) LOOP
               EXECUTE 'DROP TABLE ' || quote_ident(r.strapi) || ' CASCADE';
             END LOOP;
           END $$;
