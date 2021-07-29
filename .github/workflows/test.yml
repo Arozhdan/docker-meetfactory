@@ -11,6 +11,6 @@ jobs:
     steps:
       - name: copy db
         run: |
-          cat ${{github.event.repository.name}}_postgres_prod_1
-          docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
-          cat your_dump.sql | docker exec -i ${{github.event.repository.name}}_postgres_1 psql -U strapi
+          docker exec -i ${{github.event.repository.name}}_postgres_prod_1 -c "PGPASSWORD=strapi pg_dump --username strapi strapi" > /backup/dump.sql
+          docker exec -i ${{github.event.repository.name}}_postgres_1 /bin/bash -c "PGPASSWORD=strapi psql --username strapi strapi" < /backup/dump.sql
+
