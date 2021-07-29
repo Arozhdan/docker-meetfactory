@@ -17,5 +17,14 @@ jobs:
         run: docker exec -t ${{github.event.repository.name}}_postgres_1 pg_dumpall -c -U strapi > /backup/staging.sql
       
       - name: Insert data into prod db
-        run: cat /backup/staging.sql | docker exec -i ${{github.event.repository.name}}_postgres_prod_1 psql -U strapi
-     
+        run: |
+          docker exec -i ${{github.event.repository.name}}_postgres_prod_1 "
+          CREATE OR REPLACE RULE skip_unique AS ON INSERT TO strapi
+            WHERE (EXISTS (SELECT 1 FROM strapi WHERE users.id = new.id)) 
+            DO INSTEAD NOTHING
+          "
+          cat /backup/staging.sql | docker exec -i ${{github.event.repository.name}}_postgres_prod_1 psql -U strapi
+          
+          docker exec -i ${{github.event.repository.name}}_postgres_prod_1 "
+          DROP RULE [ IF EXISTS ] skip_unique ON strapi [ CASCADE | RESTRICT ]
+          "
