@@ -2,6 +2,7 @@ version: "3"
 services:
   postgres:
     image: postgres
+    restart: always
     environment:
       POSTGRES_DB: "${POSTGRES_DB}"
       POSTGRES_USER: "${POSTGRES_USER}"
@@ -13,6 +14,7 @@ services:
   strapi:
     build:
       context: ./strapi
+    restart: alway
     environment:
       DATABASE_CLIENT: postgres
       DATABASE_HOST: postgres
