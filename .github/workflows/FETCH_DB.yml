@@ -8,18 +8,26 @@ jobs:
     steps:
       - name: Copy production db
         run: |
-          sudo docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > /backup/dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
-          sudo docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > /backup/latest.sql
+          docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > /backup/dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
+          docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > /backup/latest.sql
       - name: Clear staging db
         run: |
-          sudo docker exec -t ${{github.event.repository.name}}_postgres_1 psql -U strapi -d postgres -c "
-          DO $$ DECLARE
-            r RECORD;
-          BEGIN
-            FOR r IN (SELECT strapi FROM pg_tables WHERE schemaname = current_schema()) LOOP
-              EXECUTE 'DROP TABLE ' || quote_ident(r.strapi) || ' CASCADE';
+          docker exec -t ${{github.event.repository.name}}_postgres_1 psql -U strapi -d strapi -c "
+          DO \$\$ 
+            DECLARE 
+              r RECORD;
+            BEGIN
+            FOR r IN 
+              (
+                SELECT table_name
+                FROM information_schema.tables 
+                WHERE table_schema=current_schema()
+              ) 
+            LOOP
+               EXECUTE 'DROP TABLE IF EXISTS ' || quote_ident(r.table_name) || ' CASCADE';
             END LOOP;
-          END $$;
-          ;"
+          END \$\$ ;
+          "
       - name: Insert data into staging db
         run: cat /backup/latest.sql | docker exec -i ${{github.event.repository.name}}_postgres_1 psql -U strapi
+        
