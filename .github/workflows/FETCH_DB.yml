@@ -15,8 +15,9 @@ jobs:
       - uses: actions/checkout@v2
         with:
           clean: false
-      - if: github.event.inputs.source != 'f'
+
       - name: Copy production db
+        if: github.event.inputs.source != 'f'
         run: |
           docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > /backup/dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
           docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > /backup/latest.sql
@@ -39,10 +40,10 @@ jobs:
             END LOOP;
           END \$\$ ;
           "
-      - if: github.event.inputs.source != 'f'
       - name: Insert data into staging db from prod db
+        if: github.event.inputs.source != 'f'
         run: cat /backup/latest.sql | docker exec -i ${{github.event.repository.name}}_postgres_1 psql -U strapi
      
-      - if: github.event.inputs.source == 'f'
       - name: Insert data into staging db from file
+        if: github.event.inputs.source == 'f'
         run: cat /backup/local.sql | docker exec -i ${{github.event.repository.name}}_postgres_1 psql -U strapi
