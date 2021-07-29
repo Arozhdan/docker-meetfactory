@@ -14,7 +14,7 @@ jobs:
         run: |
           sudo docker exec -t ${{github.event.repository.name}}_postgres_1 psql -U strapi -d postgres -c "
           BEGIN
-            DO
+            
             FOR RECORD IN (SELECT strapi FROM pg_tables WHERE schemaname = current_schema()) LOOP
               EXECUTE 'DROP TABLE ' || quote_ident(RECORD.strapi) || ' CASCADE';
             END LOOP;
