@@ -37,4 +37,3 @@ jobs:
           "
       - name: Insert data into staging db
         run: cat /backup/latest.sql | docker exec -i ${{github.event.repository.name}}_postgres_1 psql -U strapi
-        
