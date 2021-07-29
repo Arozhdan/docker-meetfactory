@@ -14,7 +14,7 @@ services:
   strapi:
     build:
       context: ./strapi
-    restart: alway
+    restart: always
     environment:
       DATABASE_CLIENT: postgres
       DATABASE_HOST: postgres
