@@ -11,5 +11,6 @@ jobs:
     steps:
       - name: copy db
         run: |
+          cat ${{github.event.repository.name}}
           docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U postgres > dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
           cat your_dump.sql | docker exec -i ${{github.event.repository.name}}_postgres_1 psql -U postgres
