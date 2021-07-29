@@ -1,0 +1,9 @@
+{
+  "name": "docker",
+  "version": "1.0.0",
+  "description": "## Setup instructions",
+  "scripts": {
+    "dev": "docker-compose -f docker-compose-dev.yml up -d",
+    "sync": "docker-compose -f docker-compose-dev.yml -d"
+  }
+}
