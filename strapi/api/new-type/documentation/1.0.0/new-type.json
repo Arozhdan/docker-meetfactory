@@ -1,12 +1,12 @@
 {
   "paths": {
-    "/local-single-type": {
+    "/new-type": {
       "get": {
         "deprecated": false,
-        "description": "Find all the local-single-type's records",
+        "description": "Find all the new-type's records",
         "responses": {
           "200": {
-            "description": "Retrieve local-single-type document(s)",
+            "description": "Retrieve new-type document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Local-single-type"
+          "New-type"
         ],
         "parameters": [
           {
@@ -195,10 +195,10 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single local-single-type record",
+        "description": "Update a single new-type record",
         "responses": {
           "200": {
-            "description": "Retrieve local-single-type document(s)",
+            "description": "Retrieve new-type document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -244,7 +244,7 @@
         },
         "summary": "",
         "tags": [
-          "Local-single-type"
+          "New-type"
         ],
         "requestBody": {
           "description": "",
@@ -252,7 +252,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewLocal-single-type"
+                "$ref": "#/components/schemas/NewNew-type"
               }
             }
           }
@@ -261,10 +261,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single local-single-type record",
+        "description": "Delete a single new-type record",
         "responses": {
           "200": {
-            "description": "deletes a single local-single-type based on the ID supplied",
+            "description": "deletes a single new-type based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -307,7 +307,7 @@
         },
         "summary": "",
         "tags": [
-          "Local-single-type"
+          "New-type"
         ],
         "parameters": []
       }
@@ -315,7 +315,7 @@
   },
   "components": {
     "schemas": {
-      "Local-single-type": {
+      "New-type": {
         "required": [
           "id"
         ],
@@ -323,10 +323,7 @@
           "id": {
             "type": "string"
           },
-          "some_field_created_locally": {
-            "type": "string"
-          },
-          "second_field": {
+          "new_field": {
             "type": "string"
           },
           "published_at": {
@@ -335,12 +332,9 @@
           }
         }
       },
-      "NewLocal-single-type": {
+      "NewNew-type": {
         "properties": {
-          "some_field_created_locally": {
-            "type": "string"
-          },
-          "second_field": {
+          "new_field": {
             "type": "string"
           },
           "published_at": {
