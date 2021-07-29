@@ -19,12 +19,12 @@ jobs:
             BEGIN
             FOR r IN 
               (
-                SELECT strapi 
+                SELECT table_name
                 FROM information_schema.tables 
                 WHERE table_schema=current_schema()
               ) 
             LOOP
-               EXECUTE 'DROP TABLE IF EXISTS ' || quote_ident(r.strapi) || ' CASCADE';
+               EXECUTE 'DROP TABLE IF EXISTS ' || quote_ident(r.table_name) || ' CASCADE';
             END LOOP;
           END \$\$ ;
           "
