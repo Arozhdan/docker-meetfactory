@@ -1,4 +1,4 @@
-name: Test
+name: FETCH_DATA_FROM_PRODUCTION
 on:
   workflow_dispatch:
    inputs:
@@ -10,9 +10,13 @@ jobs:
     runs-on: [self-hosted, staging worker]
     steps:
       - name: copy db
+        
         run: |
-          sudo docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > /backup/dump.sql
+          echo "${{ github.event.inputs.description }}"
+          sudo docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > /backup/dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
+          sudo docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > /backup/latest.sql
           sudo docker exec -t ${{github.event.repository.name}}_postgres_1 psql -U strapi -d postgres -c "DROP DATABASE strapi;"
           sudo docker exec -t ${{github.event.repository.name}}_postgres_1 psql -U strapi -d postgres -c "CREATE DATABASE strapi;"
-          cat /backup/dump.sql | docker exec -i ${{github.event.repository.name}}_postgres_1 psql -U strapi
+
+          cat /backup/latest.sql | docker exec -i ${{github.event.repository.name}}_postgres_1 psql -U strapi
     
