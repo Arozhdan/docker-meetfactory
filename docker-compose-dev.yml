@@ -33,9 +33,10 @@ services:
     build:
       context: ./frontend
     volumes:
+      - /usr/src/app/node_modules
       - ./frontend:/usr/src/app
     ports:
-      - "5333:5333"
+      - "5333:3000"
     depends_on:
       - postgres
       - strapi
