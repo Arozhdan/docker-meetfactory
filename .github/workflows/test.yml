@@ -1,10 +1,7 @@
 name: FETCH_DATA_FROM_PRODUCTION
 on:
   workflow_dispatch:
-   inputs:
-      logLevel:
-        description: 'Date:'     
-        required: false
+  
 jobs:
   Fetch_db:
     runs-on: [self-hosted, staging worker]
@@ -12,7 +9,6 @@ jobs:
       - name: copy db
         
         run: |
-          echo "${{ github.event.inputs.logLevel }}"
           sudo docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > /backup/dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
           sudo docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > /backup/latest.sql
           sudo docker exec -t ${{github.event.repository.name}}_postgres_1 psql -U strapi -d postgres -c "DROP DATABASE strapi;"
