@@ -10,4 +10,6 @@ jobs:
     runs-on: [self-hosted, staging worker]
     steps:
       - name: copy db
-        run: cp -R /home/production/actions-runner/_prod/docker-meetfactory/docker-meetfactory/postgres /home/staging/actions-runner/_work/docker-meetfactory/docker-meetfactory 
+        run: |
+          docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U postgres > dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
+          cat your_dump.sql | docker exec -i ${{github.event.repository.name}}_postgres_1 psql -U postgres
