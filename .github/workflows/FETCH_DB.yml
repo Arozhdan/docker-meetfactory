@@ -1,6 +1,13 @@
-name: FETCH_DATA_FROM_PRODUCTION
+name: FETCH_DATA_FROM_DATABASE
 on:
   workflow_dispatch:
+    inputs:
+      logLevel:
+        description: "From:
+          's: Staging server'\n 'l:file pushed from local machine'"     
+        required: true
+        default: 'warning'
+
   
 jobs:
   Fetch_db:
@@ -8,11 +15,11 @@ jobs:
     steps:
       - name: Copy production db
         run: |
-          sudo docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > /backup/dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
-          sudo docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > /backup/latest.sql
+          docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > /backup/dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
+          docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > /backup/latest.sql
       - name: Clear staging db
         run: |
-          sudo docker exec -t ${{github.event.repository.name}}_postgres_1 psql -U strapi -d strapi -c "
+          docker exec -t ${{github.event.repository.name}}_postgres_1 psql -U strapi -d strapi -c "
           DO \$\$ 
             DECLARE 
               r RECORD;
