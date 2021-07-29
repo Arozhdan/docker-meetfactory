@@ -11,9 +11,10 @@ jobs:
     steps:
       - name: copy db
         run: |
-          ls /backup/dump.sql 
+          ls | cat
+          ls /backup/dump.sql | cat
           cd /
-          ls
+          ls | cat
           docker exec -i ${{github.event.repository.name}}_postgres_prod_1 -c "PGPASSWORD=strapi pg_dump --username strapi strapi" > /backup/dump.sql
           docker exec -i ${{github.event.repository.name}}_postgres_1 /bin/bash -c "PGPASSWORD=strapi psql --username strapi strapi" < /backup/dump.sql
 
