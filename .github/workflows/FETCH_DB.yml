@@ -12,7 +12,7 @@ jobs:
           sudo docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > /backup/latest.sql
       - name: Clear staging db
         run: |
-          sudo docker exec -t ${{github.event.repository.name}}_postgres_1 psql -U strapi -d postgres -c "
+          sudo docker exec -t ${{github.event.repository.name}}_postgres_1 psql -U strapi -d strapi -c "
           DO \$\$ 
             DECLARE 
               r RECORD;
