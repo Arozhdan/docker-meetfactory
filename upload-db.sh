@@ -1,8 +1,7 @@
 git checkout develop
 git add .
-echo "Enter commit message:"
-read message -d
-git commit -m $message 
+read -r -p "Enter commit message: " message
+git commit -m "$message" 
 git push
 
 REPO=$(node -p -e "require('./package.json').name") 
