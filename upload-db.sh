@@ -45,4 +45,4 @@ echo "Copying staging db... \n\n"
 # "
 ssh root@64.225.103.36 
 
-ssh root@64.225.103.36 "./erase-meet-staging.db"
+ssh staging@64.225.103.36 "./erase-meet-staging.db"
