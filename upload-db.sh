@@ -5,6 +5,9 @@ read message -r
 git commit -m $message 
 git push
 
+REPO=$(node -p -e "require('./package.json').name") 
+
+
 echo "Exporting data into staging database...
 "
 
@@ -19,12 +22,11 @@ echo "Done. Removing the sql file:
 "
 rm dump.sql
 
-REPO=$(node -p -e "require('./package.json').name") 
 
 
 echo "Copying staging db... \n\n"
 ssh root@64.225.103.36 "
-  docker exec -t $REPO'_postgres_1' pg_dump -c -U strapi strap -c \'
+  docker exec -t $REPO'_postgres_1' pg_dump -c -U strapi strap -c '
           DO \$\$ 
             DECLARE 
               r RECORD;
@@ -39,7 +41,7 @@ ssh root@64.225.103.36 "
                EXECUTE \'DROP TABLE IF EXISTS \' || quote_ident(r.table_name) || \' CASCADE\';
             END LOOP;
           END \$\$ ;
-          \'
+          '
 "
 echo "Copying staging db... \n\n"
 ssh root@64.225.103.36 "
