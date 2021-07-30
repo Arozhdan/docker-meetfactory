@@ -1,11 +1,6 @@
 name: STAGING_FETCH_DATA
 on:
   workflow_dispatch:
-    inputs:
-      source:
-        description: "From: 'p: Production server' | 'f: File pushed from local machine'"     
-        required: true
-        default: 'p'
 
   
 jobs:
@@ -17,10 +12,9 @@ jobs:
           clean: false
 
       - name: Copy production db
-        if: github.event.inputs.source != 'f'
         run: |
-          docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > /backup/dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
-          docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dumpall -c -U strapi > /backup/latest.sql
+          docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dump -c -U ${{secrets.POSTGRES_USER}} > /backup/dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
+          docker exec -t ${{github.event.repository.name}}_postgres_prod_1 pg_dump -c -U ${{secrets.POSTGRES_USER}} > /backup/latest.sql
       
       - name: Clear staging db
         run: |
@@ -41,9 +35,4 @@ jobs:
           END \$\$ ;
           "
       - name: Insert data into staging db from prod db
-        if: github.event.inputs.source != 'f'
         run: cat /backup/latest.sql | docker exec -i ${{github.event.repository.name}}_postgres_1 psql -U strapi
-     
-      - name: Insert data into staging db from file
-        if: github.event.inputs.source == 'f'
-        run: cat /backup/local.sql | docker exec -i ${{github.event.repository.name}}_postgres_1 psql -U strapi

@@ -17,16 +17,15 @@ jobs:
         run: npm install -g json
 
       - name: Create .env
-      #  run: echo "STAGING_PORT=$(cat ./.github/ports.json | json STAGING_PORT)" >> $GITHUB_ENV
         run: |
           echo "
-          POSTGRES_DB=strapi 
-          POSTGRES_USER=strapi
-          POSTGRES_PASSWORD=strapi
+          POSTGRES_DB=${{secrets.POSTGRES_DB}}  
+          POSTGRES_USER=${{secrets.POSTGRES_USER}}
+          POSTGRES_PASSWORD=${{secrets.POSTGRES_PASSWORD}}
           DATABASE_HOST=postgres_prod
-          DATABASE_PORT=$(cat ./ports.json | json PROD_POSTGRES)
-          FRONTEND_PORT=$(cat ./ports.json | json PROD_FRONTEND)
-          STRAPI_PORT=$(cat ./ports.json | json PROD_STRAPI)
+          DATABASE_PORT=$(cat ./package.json | json PROD_POSTGRES)
+          FRONTEND_PORT=$(cat ./package.json | json PROD_FRONTEND)
+          STRAPI_PORT=$(cat ./package.json | json PROD_STRAPI)
           " > .env
       
 
