@@ -1,7 +1,6 @@
 git checkout develop
 git add .
-echo "Enter commit message:"
-read message -d
+read -r -p "Enter commit message: " message
 git commit -m $message 
 git push
 
