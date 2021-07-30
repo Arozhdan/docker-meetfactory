@@ -24,7 +24,7 @@ REPO=$(node -p -e "require('./package.json').name")
 
 echo "Copying staging db... \n\n"
 ssh root@64.225.103.36 "
-  docker exec -t $REPO'_postgres_1' pg_dump -c -U strapi strap -c \"
+  docker exec -t $REPO'_postgres_1' pg_dump -c -U strapi strap -c \'
           DO \$\$ 
             DECLARE 
               r RECORD;
@@ -36,10 +36,10 @@ ssh root@64.225.103.36 "
                 WHERE table_schema=current_schema()
               ) 
             LOOP
-               EXECUTE 'DROP TABLE IF EXISTS ' || quote_ident(r.table_name) || ' CASCADE';
+               EXECUTE \'DROP TABLE IF EXISTS \' || quote_ident(r.table_name) || \' CASCADE\';
             END LOOP;
           END \$\$ ;
-          \"
+          \'
 "
 echo "Copying staging db... \n\n"
 ssh root@64.225.103.36 "
