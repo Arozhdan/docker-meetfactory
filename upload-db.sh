@@ -42,8 +42,6 @@ ssh root@64.225.103.36 "
             END LOOP;
           END \$\$ ;
           \"
-"
-echo "Copying staging db... \n\n"
-ssh root@64.225.103.36 "
+          &&
   docker exec -t $REPO'_postgres_1' pg_dump -c -U strapi strapi > /backup/dump_staging.sql
 "
