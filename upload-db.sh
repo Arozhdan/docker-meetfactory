@@ -11,7 +11,7 @@ REPO=$(node -p -e "require('./package.json').name")
 echo "Exporting data into staging database...
 "
 
-docker exec -t $REPO'_postgres_1' pg_dumpall -c -U strapi > ./dump.sql
+docker exec -t $REPO'_postgres_1' pg_dump -c -U strapi strapi > ./dump.sql
 
 echo "Uploading sql file"
 
