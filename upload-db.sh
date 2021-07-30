@@ -1,3 +1,6 @@
+git add .
+read message
+git commit -m $message
 echo "Exporting data into staging database...
 "
 
@@ -12,3 +15,10 @@ echo "Done. Removing the sql file:
 "
 rm dump.sql
 
+REPO=$(node -p -e "require('./package.json').name")
+
+
+echo "Copying staging db... \n\n"
+ssh root@64.225.103.36 "
+  docker exec -t $REPO'_postgres_1' pg_dump -c -U strapi strapi > /backup/dump_staging.sql
+"
