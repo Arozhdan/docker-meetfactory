@@ -41,6 +41,6 @@ services:
     depends_on:
       - postgres_prod
       - strapi_prod
-      networks:
-default:
-  name: meetfactory
+networks:
+  default:
+    name: meetfactory
