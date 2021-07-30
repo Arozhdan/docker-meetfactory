@@ -26,5 +26,4 @@ rm dump.sql
 
 echo "Copying staging db... \n\n"
 
-ssh staging@64.225.103.36 "./erase-meet-staging.db"
-ssh staging@64.225.103.36 " /backup/dump_staging.sql | sudo docker exec -i $REPO'_postgres_1' psql -U strapi"
+ssh staging@64.225.103.36 "./erase-meet-staging.db;  /backup/dump_staging.sql | sudo docker exec -i $REPO'_postgres_1' psql -U strapi"
