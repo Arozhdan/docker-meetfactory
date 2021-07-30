@@ -7,7 +7,7 @@ git push
 echo "Exporting data into staging database...
 "
 
-docker exec -t docker_postgres_1 pg_dumpall -c -U strapi > ./dump.sql
+docker exec -t $REPO'_postgres_1' pg_dumpall -c -U strapi > ./dump.sql
 
 echo "Uploading sql file"
 
