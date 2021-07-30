@@ -1,7 +1,7 @@
 git checkout develop
 git add .
 echo "Enter commit message:"
-read message -r
+read message -d
 git commit -m $message 
 git push
 
@@ -21,9 +21,3 @@ scp dump.sql root@64.225.103.36:/backup/local.sql
 echo "Done. Removing the sql file:
 "
 rm dump.sql
-
-
-
-echo "Copying staging db... \n\n"
-
-ssh root@64.225.103.36 "./erase-meet-staging.db;  cat /backup/dump_staging.sql | sudo docker exec -i $REPO'_postgres_1' psql -U strapi"
