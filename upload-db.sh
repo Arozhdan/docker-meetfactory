@@ -44,7 +44,7 @@ echo "Copying staging db... \n\n"
 #   '
 # "
 echo $REPO
-ssh root@64.225.103.36 ' docker exec -t ${REPO}"_postgres_1" psql -U strapi -d strapi -c "
+ssh root@64.225.103.36 ' docker exec -t \$REPO"_postgres_1" psql -U strapi -d strapi -c "
   DO \$\$  
     DECLARE 
       r RECORD;
