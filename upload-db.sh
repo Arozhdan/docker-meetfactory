@@ -25,22 +25,26 @@ rm dump.sql
 
 
 echo "Copying staging db... \n\n"
-ssh root@64.225.103.36 <<__END__
-  docker exec -t $REPO'_postgres_1' psql -U strapi -d strapi -c "
-          DO \$\$  
-            DECLARE 
-              r RECORD;
-            BEGIN
-            FOR r IN 
-              (
-                SELECT table_name
-                FROM information_schema.tables 
-                WHERE table_schema=current_schema()
-              ) 
-            LOOP
-               EXECUTE 'DROP TABLE IF EXISTS ' || quote_ident(r.table_name) || ' CASCADE';
-            END LOOP;
-          END \$\$ ;
-          "; 
-  docker exec -t $REPO'_postgres_1' pg_dump -c -U strapi strapi > /backup/dump_staging.sql
-__END__
+
+command = "
+  DO \$\$  
+    DECLARE 
+      r RECORD;
+    BEGIN
+    FOR r IN 
+      (
+        SELECT table_name
+        FROM information_schema.tables 
+        WHERE table_schema=current_schema()
+      ) 
+    LOOP
+        EXECUTE 'DROP TABLE IF EXISTS ' || quote_ident(r.table_name) || ' CASCADE';
+    END LOOP;
+  END \$\$ ;
+"
+
+# ssh root@64.225.103.36 "<<__END__"
+#   docker exec -t $REPO'_postgres_1' pg_dump -c -U strapi strapi > /backup/dump_staging.sql
+# __END__
+
+echo command | ssh root@64.225.103.36
