@@ -28,6 +28,8 @@ jobs:
           STRAPI_PORT=$(cat ./package.json | json PROD_STRAPI)
           " > .env
       
+      - name: Stop containers
+        run: docker-compose -f docker-compose-prod.yml down
 
       - name: Build containers
         run: docker-compose -f docker-compose-prod.yml build
