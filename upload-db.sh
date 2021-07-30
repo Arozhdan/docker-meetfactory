@@ -1,6 +1,9 @@
 git add .
+echo "Print commit message:"
 read message
-git commit -m $message
+git commit -m $message 
+git push
+
 echo "Exporting data into staging database...
 "
 
