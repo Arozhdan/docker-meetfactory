@@ -1,9 +1,12 @@
 git checkout develop
 git add .
-echo "Print commit message:"
-read message
+echo "Enter commit message:"
+read message -r
 git commit -m $message 
 git push
+
+REPO=$(node -p -e "require('./package.json').name") 
+
 
 echo "Exporting data into staging database...
 "
@@ -19,10 +22,9 @@ echo "Done. Removing the sql file:
 "
 rm dump.sql
 
-REPO=$(node -p -e "require('./package.json').name")
 
 
 echo "Copying staging db... \n\n"
-ssh root@64.225.103.36 "
-  docker exec -t $REPO'_postgres_1' pg_dump -c -U strapi strapi > /backup/dump_staging.sql
-"
+
+ssh staging@64.225.103.36 "./erase-meet-staging.db"
+ssh staging@64.225.103.36 " /backup/dump_staging.sql | docker exec -i $REPO'_postgres_1' psql -U strapi"
