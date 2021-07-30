@@ -525,6 +525,9 @@
           "unique_id": {
             "type": "string"
           },
+          "content": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -534,6 +537,9 @@
       "NewCollection": {
         "properties": {
           "unique_id": {
+            "type": "string"
+          },
+          "content": {
             "type": "string"
           },
           "published_at": {

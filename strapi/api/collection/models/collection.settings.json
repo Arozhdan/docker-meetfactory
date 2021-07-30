@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "collections",
   "info": {
-    "name": "collection"
+    "name": "collection",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -12,6 +13,9 @@
   "pluginOptions": {},
   "attributes": {
     "unique_id": {
+      "type": "string"
+    },
+    "content": {
       "type": "string"
     }
   }
