@@ -1,3 +1,4 @@
+git checkout develop
 git add .
 echo "Print commit message:"
 read message
